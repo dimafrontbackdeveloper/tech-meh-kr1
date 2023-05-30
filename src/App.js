@@ -938,6 +938,30 @@ function App() {
 
 	const buildAreRef = useRef(null)
 
+	const createAreaInput = e => {
+		const areaPaddingLeft = 200
+		const cursorPositionX = e.pageX - areaPaddingLeft
+		const cursorPositionY =
+			e.pageY - buildAreRef.current.getBoundingClientRect().top - window.scrollY
+
+		setBuildAreaInputs(prev => [
+			...prev,
+			{ left: cursorPositionX, top: cursorPositionY },
+		])
+	}
+
+	const deleteAreaInput = (top, left) => {
+		setBuildAreaInputs(prev =>
+			prev.map(el => {
+				if (el?.left !== left && el?.top !== top) {
+					return el
+				} else {
+					return null
+				}
+			})
+		)
+	}
+
 	const addFigureToAreaFigures = className => {
 		setBuildAreaFigures(prev => [...prev, { className }])
 	}
@@ -1654,29 +1678,7 @@ function App() {
 		}
 	}
 
-	const createAreaInput = e => {
-		const areaPaddingLeft = 200
-		const cursorPositionX = e.pageX - areaPaddingLeft
-		const cursorPositionY =
-			e.pageY - buildAreRef.current.getBoundingClientRect().top - window.scrollY
 
-		setBuildAreaInputs(prev => [
-			...prev,
-			{ left: cursorPositionX, top: cursorPositionY },
-		])
-	}
-
-	const deleteAreaInput = (top, left) => {
-		setBuildAreaInputs(prev =>
-			prev.map(el => {
-				if (el?.left !== left && el?.top !== top) {
-					return el
-				} else {
-					return null
-				}
-			})
-		)
-	}
 
 	return (
 		<div className='App'>
