@@ -1,38 +1,161 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
-import kronshtein1 from './assets/kronshtein1.png'
-import kronshtein10 from './assets/kronshtein10.png'
-import kronshtein11 from './assets/kronshtein11.png'
-import kronshtein12 from './assets/kronshtein12.png'
-import kronshtein13 from './assets/kronshtein13.png'
-import kronshtein14 from './assets/kronshtein14.png'
-import kronshtein15 from './assets/kronshtein15.png'
-import kronshtein16 from './assets/kronshtein16.png'
-import kronshtein17 from './assets/kronshtein17.png'
-import kronshtein18 from './assets/kronshtein18.png'
-import kronshtein19 from './assets/kronshtein19.png'
-import kronshtein2 from './assets/kronshtein2.png'
-import kronshtein20 from './assets/kronshtein20.png'
-import kronshtein21 from './assets/kronshtein21.png'
-import kronshtein22 from './assets/kronshtein22.png'
-import kronshtein23 from './assets/kronshtein23.png'
-import kronshtein24 from './assets/kronshtein24.png'
-import kronshtein25 from './assets/kronshtein25.png'
-import kronshtein26 from './assets/kronshtein26.png'
-import kronshtein27 from './assets/kronshtein27.png'
-import kronshtein28 from './assets/kronshtein28.png'
-import kronshtein29 from './assets/kronshtein29.png'
-import kronshtein3 from './assets/kronshtein3.png'
-import kronshtein30 from './assets/kronshtein30.png'
-import kronshtein4 from './assets/kronshtein4.png'
-import kronshtein5 from './assets/kronshtein5.png'
-import kronshtein6 from './assets/kronshtein6.png'
-import kronshtein7 from './assets/kronshtein7.png'
-import kronshtein8 from './assets/kronshtein8.png'
-import kronshtein9 from './assets/kronshtein9.png'
+import kronshtein1 from './assets/kronshtein1.jpg'
+import kronshtein10 from './assets/kronshtein10.jpg'
+import kronshtein11 from './assets/kronshtein11.jpg'
+import kronshtein12 from './assets/kronshtein12.jpg'
+import kronshtein13 from './assets/kronshtein13.jpg'
+import kronshtein14 from './assets/kronshtein14.jpg'
+import kronshtein15 from './assets/kronshtein15.jpg'
+import kronshtein16 from './assets/kronshtein16.jpg'
+import kronshtein17 from './assets/kronshtein17.jpg'
+import kronshtein18 from './assets/kronshtein18.jpg'
+import kronshtein19 from './assets/kronshtein19.jpg'
+import kronshtein2 from './assets/kronshtein2.jpg'
+import kronshtein20 from './assets/kronshtein20.jpg'
+import kronshtein21 from './assets/kronshtein21.jpg'
+import kronshtein22 from './assets/kronshtein22.jpg'
+import kronshtein23 from './assets/kronshtein23.jpg'
+import kronshtein24 from './assets/kronshtein24.jpg'
+import kronshtein25 from './assets/kronshtein25.jpg'
+import kronshtein26 from './assets/kronshtein26.jpg'
+import kronshtein27 from './assets/kronshtein27.jpg'
+import kronshtein28 from './assets/kronshtein28.jpg'
+import kronshtein29 from './assets/kronshtein29.jpg'
+import kronshtein3 from './assets/kronshtein3.jpg'
+import kronshtein30 from './assets/kronshtein30.jpg'
+import kronshtein4 from './assets/kronshtein4.jpg'
+import kronshtein5 from './assets/kronshtein5.jpg'
+import kronshtein6 from './assets/kronshtein6.jpg'
+import kronshtein7 from './assets/kronshtein7.jpg'
+import kronshtein8 from './assets/kronshtein8.jpg'
+import kronshtein9 from './assets/kronshtein9.jpg'
 
 function App() {
+	const danoValues = [
+		{
+			f1: 5,
+			f2: 15,
+		},
+		{
+			f1: 10,
+			f2: 4,
+		},
+		{
+			f1: 7,
+			f2: 11,
+		},
+		{
+			f1: 8,
+			f2: 16,
+		},
+		{
+			f1: 3,
+			f2: 7,
+		},
+		{
+			f1: 5,
+			f2: 19,
+		},
+		{
+			f1: 6,
+			f2: 9,
+		},
+		{
+			f1: 2,
+			f2: 17,
+		},
+		{
+			f1: 10,
+			f2: 6,
+		},
+		{
+			f1: 7,
+			f2: 15,
+		},
+		{
+			f1: 3,
+			f2: 12,
+		},
+		{
+			f1: 9,
+			f2: 13,
+		},
+		{
+			f1: 5,
+			f2: 14,
+		},
+		{
+			f1: 6,
+			f2: 20,
+		},
+		{
+			f1: 9,
+			f2: 5,
+		},
+		{
+			f1: 4,
+			f2: 14,
+		},
+		{
+			f1: 7,
+			f2: 3,
+		},
+		{
+			f1: 4,
+			f2: 18,
+		},
+		{
+			f1: 9,
+			f2: 3,
+		},
+		{
+			f1: 16,
+			f2: 6,
+		},
+		{
+			f1: 8,
+			f2: 4,
+		},
+		{
+			f1: 14,
+			f2: 8,
+		},
+		{
+			f1: 6,
+			f2: 11,
+		},
+		{
+			f1: 12,
+			f2: 4,
+		},
+		{
+			f1: 2,
+			f2: 19,
+		},
+		{
+			f1: 10,
+			f2: 19,
+		},
+		{
+			f1: 11,
+			f2: 18,
+		},
+		{
+			f1: 7,
+			f2: 16,
+		},
+		{
+			f1: 7,
+			f2: 16,
+		},
+		{
+			f1: 5,
+			f2: 14,
+		},
+	]
+
 	const kronshteinImgs = [
 		kronshtein1,
 		kronshtein2,
@@ -970,213 +1093,264 @@ function App() {
 		setBuildAreaFigures(prev => prev.filter(el => el.className !== className))
 	}
 
+	useEffect(() => {
+		setF1(danoValues[activeIndexOfKronshteinImg]?.f1)
+		setF2(danoValues[activeIndexOfKronshteinImg]?.f2)
+	}, [activeIndexOfKronshteinImg])
+
 	const solveExample1 = () => {
 		if (
 			activeIndexOfKronshteinImg === 1 &&
-			example1 === 'F2 – RAВ – RAС * соs30 = 0'
+			(example1 === 'F2 – RAВ – RAС * соs30 = 0' ||
+				example1 === 'RAB – F2 – RAC * cos30' ||
+				example1 === 'RAB – RAC * cos30 - F2')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(6.34)
-			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 2 &&
-			example1 === 'F2 – RAВ + RAС * соs30 = 0'
+			(example1 === 'F2 – RAВ + RAС * соs30 = 0' ||
+				example1 === 'RAС * соs30 - F2 + RAВ = 0' ||
+				example1 === 'RAС * соs30 + RAВ - F2 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(21.32)
-			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 3 &&
-			example1 === 'RAВ + F2 * соs60 – F1 * соs30 + RAС * соs60 = 0'
+			(example1 === 'RAВ + F2 * соs60 – F1 * соs30 + RAС * соs60 = 0' ||
+				example1 === 'F2 * соs60 – F1 * соs30 + RAВ + RAС * соs60 = 0' ||
+				example1 === 'RAС * соs60 - F1 * соs30 + RAВ + F2 * соs60 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-6.96)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 4 &&
-			example1 === 'F1 – RAС * соs60 = 0'
+			(example1 === 'F1 – RAС * соs60 = 0' ||
+				example1 === '-RAС * соs60 + F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(29.86)
-			setIsNeedToShowValueToExample1(true)
+			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 5 &&
-			example1 === 'F1 – RAС * соs60 = 0'
+			(example1 === 'F1 – RAС * соs60 = 0' ||
+				example1 === '-RAС * соs60 + F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(1.85)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 6 &&
-			example1 === 'RAВ * соs30 - F1 = 0'
+			(example1 === 'RAВ * соs30 - F1 = 0' ||
+				example1 === '-F1 + RAВ * соs30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(5.77)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 7 &&
-			example1 === '-RAС * соs30 - F2 = 0'
+			(example1 === '-RAС * соs30 - F2 = 0' ||
+				example1 === '-F2 - RAС * соs30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(11.195)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 8 &&
-			example1 === 'F2 - RAВ – RAС * соs30 = 0'
+			(example1 === 'F2 - RAВ – RAС * соs30 = 0' ||
+				example1 === '-RAВ – RAС * соs30 + F2 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(20.46)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 9 &&
-			example1 === 'RAВ – RAС * соs60 - F2 = 0'
+			(example1 === 'RAВ – RAС * соs60 - F2 = 0' ||
+				example1 === '-F2 + RAВ – RAС * соs60 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(0.23)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 10 &&
-			example1 === 'RAВ * соs30 + F1 = 0'
+			(example1 === 'RAВ * соs30 + F1 = 0' ||
+				example1 === 'F1 + RAВ * соs30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-8.08)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 11 &&
-			example1 === 'RAВ * соs30 - F1 = 0'
+			(example1 === 'RAВ * соs30 - F1 = 0' ||
+				example1 === '-F1 + RAВ * соs30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(3.46)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 12 &&
-			example1 === 'RAВ + F2 * соs30 - F1 * соs60 = 0'
+			(example1 === 'RAВ + F2 * соs30 - F1 * соs60 = 0' ||
+				example1 === 'F2 * соs30 - F1 * соs60 + RAВ = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-6.76)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 13 &&
-			example1 === 'RAВ + RAС * соs30 - F1 = 0'
+			(example1 === 'RAВ + RAС * соs30 - F1 = 0' ||
+				example1 === '-F1 + RAВ + RAС * соs30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-19.25)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 14 &&
-			example1 === 'F2 - RAС * соs30 = 0'
+			(example1 === 'F2 - RAС * соs30 = 0' ||
+				example1 === '-RAС * соs30 + F2 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(17.55)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 15 &&
-			example1 === 'RAС + F2 * соs45 - F1 * соs15 = 0'
+			(example1 === 'RAС + F2 * соs45 - F1 * соs15 = 0' ||
+				example1 === 'RAС - F1 * соs15 + F2 * соs45 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(5.87)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 16 &&
-			example1 === 'F1 - RAВ - RAС * соs30 = 0'
+			(example1 === 'F1 - RAВ - RAС * соs30 = 0' ||
+				example1 === 'RAВ - F2 - RAС * соs30 = 0' ||
+				example1 === 'RAВ - RAС * соs30 - F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-20.25)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 17 &&
-			example1 === 'RAВ – F2 - RAС * соs30 = 0'
+			(example1 === 'RAВ – F2 - RAС * соs30 = 0' ||
+				example1 === 'RAВ – RAС * соs30 - F2 = 0' ||
+				example1 === 'F2 - RAС * соs30 - RAВ = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(15.12)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 18 &&
-			example1 === 'F1 * соs30 + F2 * соs30 – RAС - RAВ * соs60 = 0'
+			(example1 === 'F1 * соs30 + F2 * соs30 – RAС - RAВ * соs60 = 0' ||
+				example1 === 'F2 * соs30 + F1 * соs30 – RAС - RAВ * соs60 = 0' ||
+				example1 === 'RAС * соs60 - RAВ * соs60 - F1 * соs30 - F2 * соs30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-8.08)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 19 &&
-			example1 === 'F2 + RAС * соs60 - RAВ =0'
+			(example1 === 'F2 + RAС * соs60 - RAВ = 0' ||
+				example1 === 'RAС * соs60 - RAВ + F2 = 0' ||
+				example1 === 'RAС * соs60 + F2 - RAВ = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-2.2)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 20 &&
-			example1 === 'F2 * соs30 - RAС * соs30 = 0'
+			(example1 === 'F2 * соs30 - RAС * соs30 = 0' ||
+				example1 === 'RAС * соs30 - F2 * соs30 = 0' ||
+				example1 === '-RAС * соs30 + F2 * соs30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(10)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 21 &&
-			example1 === 'RAВ - F2 * соs30 - F1 * соs60 = 0'
+			(example1 === 'RAВ - F2 * соs30 - F1 * соs60 = 0' ||
+				example1 === 'RAВ - F1 * соs60 - F2 * соs30 = 0' ||
+				example1 === '-F2 * соs30 - F1 * соs60 + RAВ = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(7.46)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 22 &&
-			example1 === '-RAС + F1 * соs45 + F2 * соs45 = 0'
+			(example1 === '-RAС + F1 * соs45 + F2 * соs45 = 0' ||
+				example1 === 'F1 * соs45 + F2 * соs45 - RAС = 0' ||
+				example1 === 'F2 * соs45 + F1 * соs45 - RAС = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-4.24)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 23 &&
-			example1 === 'RAВ * соs30 + F2 * соs60 - F1 = 0'
+			(example1 === 'RAВ * соs30 + F2 * соs60 - F1 = 0' ||
+				example1 === 'RAВ * соs30 - F1 + F2 * соs60 = 0' ||
+				example1 === 'F2 * соs60 + RAВ * соs30 - F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(0.58)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 24 &&
-			example1 === 'F1 - RAС * соs60 - F2 * соs30 = 0'
+			(example1 === 'F1 - RAС * соs60 - F2 * соs30 = 0' ||
+				example1 === '-RAС * соs60 - F2 * соs30 + F1 = 0' ||
+				example1 === '-F2 * соs30 - RAС * соs60 + F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-12.79)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 25 &&
-			example1 === 'RAВ + RAС * соs45 + F2 * соs60 = 0'
+			(example1 === 'RAВ + RAС * соs45 + F2 * соs60 = 0' ||
+				example1 === 'RAВ + F2 * соs60 + RAС * соs45 = 0' ||
+				example1 === 'F2 * соs60 + RAС * соs45 + RAВ = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-23.95)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 26 &&
-			example1 === 'RAВ + F2 * соs60 - RAС * соs30 - F1 =0'
+			(example1 === 'RAВ + F2 * соs60 - RAС * соs30 - F1 = 0' ||
+				example1 === 'RAВ - RAС * соs30 + F2 * соs60 - F1 = 0' ||
+				example1 === 'F2 * соs60 - RAС * соs30 + RAВ - F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-27.998)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 27 &&
-			example1 === 'RAВ – F1 * соs45 - RAС * соs45 = 0'
+			(example1 === 'RAВ – F1 * соs45 - RAС * соs45 = 0' ||
+				example1 === 'RAВ - RAС * соs45 - F1 * соs45 = 0' ||
+				example1 === '-F1 * соs45 - RAС * соs45 + RAВ = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-2.45)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 28 &&
-			example1 === 'RAВ + F1 * соs60 + RAС * соs60 - F2* соs30 = 0'
+			(example1 === 'RAВ + F1 * соs60 + RAС * соs60 - F2* соs30 = 0' ||
+				example1 === 'RAВ + RAС * соs60 + F1 * соs60 - F2* соs30 = 0' ||
+				example1 === 'F1 * соs60 + RAС * соs60 + RAВ - F2* соs30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-2.24)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 29 &&
-			example1 === '-RAВ + F1 + RAС * соs60 = 0'
+			(example1 === '-RAВ + F1 + RAС * соs60 = 0' ||
+				example1 === 'F1 + RAС * соs60 - RAВ = 0' ||
+				example1 === 'RAС * соs60 + F1 - RAВ = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(16.24)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 30 &&
-			example1 === 'RAВ - F1 * соs30 - RAС * соs15 - F2 * соs60 = 0'
+			(example1 === 'RAВ - F1 * соs30 - RAС * соs15 - F2 * соs60 = 0' ||
+				example1 === 'RAВ - F2 * соs60 - RAС * соs15 - F1 * соs30 = 0' ||
+				example1 === 'RAВ - RAС * соs15 - F1 * соs30 - F2 * соs60 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-24.56)
@@ -1189,210 +1363,274 @@ function App() {
 	const solveExample2 = () => {
 		if (
 			activeIndexOfKronshteinImg === 1 &&
-			example2 === 'RAС * соs60 - F1 = 0'
+			(example2 === 'RAС * соs60 - F1 = 0' ||
+				example2 === 'F1 - RAС * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-10)
 			setIsNeedToShowValueToExample2(true)
+			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 2 &&
-			example2 === 'RAС * соs60 - F1 = 0'
+			(example2 === 'RAС * соs60 - F1 = 0' ||
+				example2 === 'F1 - RAС * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(20)
 			setIsNeedToShowValueToExample2(true)
+			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 3 &&
-			example2 === 'RAС * соs30 – F2 * соs30 – F1 * соs60 = 0'
+			(example2 === 'RAС * соs30 – F2 * соs30 – F1 * соs60 = 0' ||
+				example2 === 'F2 * соs30 – F1 * соs60 – RAС * соs30 = 0' ||
+				example2 === 'F1 * соs60 – F2 * соs30 – RAС * соs30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(15.04)
+			setIsNeedToShowValueToExample1(true)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 4 &&
-			example2 === 'F2 + RAС * соs30 - RAВ = 0'
+			(example2 === 'F2 + RAС * соs30 - RAВ = 0' ||
+				example2 === 'RAС * соs30 + F2 - RAВ = 0' ||
+				example2 === 'RAС * соs30 - RAВ + F2 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(16)
-			setIsNeedToShowValueToExample2(true)
+			setIsNeedToShowValueToExample1(true)
+			// setIsNeedToShowValueToExample2(true);
 		} else if (
 			activeIndexOfKronshteinImg === 5 &&
-			example2 === 'F2 - RAС * соs30 - RAВ = 0'
+			(example2 === 'F2 - RAС * соs30 - RAВ = 0' ||
+				example2 === '-RAС * соs30 + F2 - RAВ = 0' ||
+				example2 === '-RAС * соs30 - RAВ + F2 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(6)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 6 &&
-			example2 === 'F2 + RAВ * соs60 - RAС = 0'
+			(example2 === 'F2 + RAВ * соs60 - RAС = 0' ||
+				example2 === 'RAВ * соs60 + F2 - RAС = 0' ||
+				example2 === 'RAВ * соs60 - RAС + F2 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(21.89)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 7 &&
-			example2 === 'RAВ + RAС * соs60 - F1 = 0'
+			(example2 === 'RAВ + RAС * соs60 - F1 = 0' ||
+				example2 === 'RAС * соs60 + RAВ - F1 = 0' ||
+				example2 === 'RAС * соs60 - F1 + RAВ = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-10.39)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 8 &&
-			example2 === '–F1 - RAС * соs60 = 0'
+			(example2 === '–F1 - RAС * соs60 = 0' ||
+				example2 === '-RAС * соs60 - F1 = 0' ||
+				example2 === 'F1 + RAС * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-4)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 9 &&
-			example2 === '–F1 - RAС * соs30 = 0'
+			(example2 === '–F1 - RAС * соs30 = 0' ||
+				example2 === '-RAС * соs30 - F1 = 0' ||
+				example2 === 'F1 + RAС * соs30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-11.55)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 10 &&
-			example2 === 'RAС + RAВ * соs60 - F2 = 0'
+			(example2 === 'RAС + RAВ * соs60 - F2 = 0' ||
+				example2 === 'RAС * соs60 + RAВ - F2 = 0' ||
+				example2 === 'RAС * соs60 - F2 + RAВ = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(19.04)
 			setIsNeedToShowValueToExample2(true)
-		} else if (
+		}
+		if (
 			activeIndexOfKronshteinImg === 11 &&
-			example2 === 'RAС + RAВ * соs60 - F2 = 0'
+			(example2 === 'RAС + RAВ * соs60 - F2 = 0' ||
+				example2 === 'RAВ * соs60 + RAС - F2 = 0' ||
+				example2 === 'RAВ * соs60 - F2 + RAС = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(10.27)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 12 &&
-			example2 === 'RAС - F2 * соs60 - F1 * соs30 = 0'
+			(example2 === 'RAС - F2 * соs60 - F1 * соs30 = 0' ||
+				example2 === '-F2 * соs60 - F1 * соs30 + RAС = 0' ||
+				example2 === '-F2 * соs60 + RAС - F1 * соs30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(15.29)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 13 &&
-			example2 === 'F2 - RAС * соs60 = 0'
+			(example2 === 'F2 - RAС * соs60 = 0' ||
+				example2 === '-RAС * соs60 + F2 = 0' ||
+				example2 === 'F2 + RAС * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(28)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 14 &&
-			example2 === 'RAВ - RAС * соs60 - F1 = 0'
+			(example2 === 'RAВ - RAС * соs60 - F1 = 0' ||
+				example2 === '-RAС * соs60 + RAВ - F1 = 0' ||
+				example2 === 'RAВ * соs60 - F1 - RAС = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(23.09)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 15 &&
-			example2 === 'RAВ - F1 * соs 75° - F2 * соs45 = 0'
+			(example2 === 'RAВ - F1 * соs 75° - F2 * соs45 = 0' ||
+				example2 === 'RAВ * соs75° - F1 * соs45 - F2 * соs45 = 0' ||
+				example2 === 'RAВ * соs75° - F2 * соs45 - F1 * соs45 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(5.15)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 16 &&
-			example2 === '-F2 + RAС * соs60 = 0'
+			(example2 === '-F2 + RAС * соs60 = 0' ||
+				example2 === '-RAС * соs60 + F2 = 0' ||
+				example2 === 'F2 + RAС * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(28)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 17 &&
-			example2 === '-F1 + RAС * соs60 = 0'
+			(example2 === '-F1 + RAС * соs60 = 0' ||
+				example2 === '-RAС * соs60 + F1 = 0' ||
+				example2 === 'F1 + RAС * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(14)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 18 &&
-			example2 === 'F2 * соs60 + RAВ * соs30 - F1 * соs60 = 0'
+			(example2 === 'F2 * соs60 + RAВ * соs30 - F1 * соs60 = 0' ||
+				example2 === 'RAВ * соs30 + F2 * соs60 - F1 * соs60 = 0' ||
+				example2 === 'RAВ * соs30 - F1 * соs60 + F2 * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(23.09)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 19 &&
-			example2 === '-F1 - RAС * соs30 = 0'
+			(example2 === '-F1 - RAС * соs30 = 0' ||
+				example2 === '-RAС * соs30 - F1 = 0' ||
+				example2 === 'F1+ RAС * соs30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-10.39)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 20 &&
-			example2 === 'RAВ + RAС * соs60 + F2 * соs60 - F1 = 0'
+			(example2 === 'RAВ + RAС * соs60 + F2 * соs60 - F1 = 0' ||
+				example2 === 'RAВ * соs60 + RAС + F2 * соs60 - F1 = 0' ||
+				example2 === 'RAВ * соs60 + F2 * соs60 + RAС - F1 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(6)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 21 &&
-			example2 === '-RAС + F2 * соs60 - F1 * соs30 = 0'
+			(example2 === '-RAС + F2 * соs60 - F1 * соs30 = 0' ||
+				example2 === 'F2 * соs60 - RAС - F1 * соs30 = 0' ||
+				example2 === 'F2 * соs60 - F1 * соs30 - RAС = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-4.93)
 			setIsNeedToShowValueToExample2(true)
-		} else if (
+		}
+		if (
 			activeIndexOfKronshteinImg === 22 &&
-			example2 === 'RAВ + F1 * соs45 - F2* соs45 = 0'
+			(example2 === 'RAВ + F1 * соs45 - F2* соs45 = 0' ||
+				example2 === 'F1 * соs45 + RAВ - F2* соs45 = 0' ||
+				example2 === 'F1 * соs45 - F2* соs45 + RAВ = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(15.55)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 23 &&
-			example2 === 'F2 * соs30 - RAВ * соs60 - RAС = 0'
+			(example2 === 'F2 * соs30 - RAВ * соs60 - RAС = 0' ||
+				example2 === 'F2 * соs30 - RAС - RAВ * соs60 = 0' ||
+				example2 === 'F2 * соs30 - RAС + RAВ * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(9.24)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 24 &&
-			example2 === '-RAВ - RAС * соs30 + F2 * соs60 = 0'
+			(example2 === '-RAВ - RAС * соs30 + F2 * соs60 = 0' ||
+				example2 === '-RAС * соs30 - RAВ + F2 * соs60 = 0' ||
+				example2 === 'F2 * соs60 - RAВ - RAС * соs30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(17.08)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 25 &&
-			example2 === 'F2 * соs30 - F1 - RAС * соs45 = 0'
+			(example2 === 'F2 * соs30 - F1 - RAС * соs45 = 0' ||
+				example2 === 'F2 * соs30 - RAС * соs45 - F1 = 0' ||
+				example2 === '-RAС * соs45 + F2 * соs30 - F1 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(20.44)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 26 &&
-			example2 === 'F2 * соs30 + RAС * соs60 = 0'
+			(example2 === 'F2 * соs30 + RAС * соs60 = 0' ||
+				example2 === 'RAС * соs60 + F2 * соs30 = 0' ||
+				example2 === 'RAС * соs60 + F2 * соs30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-32.91)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 27 &&
-			example2 === '-F2 - RAС * соs45 + F1 * соs45 = 0'
+			(example2 === '-F2 - RAС * соs45 + F1 * соs45 = 0' ||
+				example2 === 'F1 * соs45 - RAС * соs45 - F2 = 0' ||
+				example2 === '-RAС * соs45 - F2 + F1 * соs45 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-14.46)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 28 &&
-			example2 === 'F1 * соs30 + F2 * соs60 - RAС * соs30 = 0'
+			(example2 === 'F1 * соs30 + F2 * соs60 - RAС * соs30 = 0' ||
+				example2 === 'F1 * соs30 - RAС * соs30 + F2 * соs60 = 0' ||
+				example2 === '-RAС * соs30 + F1 * соs30 + F2 * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(16.24)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 29 &&
-			example2 === 'F2 - RAС * соs30 = 0'
+			(example2 === 'F2 - RAС * соs30 = 0' ||
+				example2 === '-RAС * соs30 + F2 = 0' ||
+				example2 === 'F2 + RAС * соs30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(18.48)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 30 &&
-			example2 === 'F1 * соs60 - F2 * соs30 - RAС * соs 75° = 0'
+			(example2 === 'F1 * соs60 - F2 * соs30 - RAС * соs 75° = 0' ||
+				example2 === '-F2 * соs30 - RAС * соs 75° + F1 * соs60 = 0' ||
+				example2 === '-RAС * соs 75° - F2 * соs30 + F1 * соs60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-37.16)
@@ -1405,7 +1643,12 @@ function App() {
 	const solveExample3 = () => {
 		if (
 			activeIndexOfKronshteinImg === 1 &&
-			example3 === 'F2 * соs30 + F1 * соs60 – RAС – RAВ * соs30 = 0'
+			(example3 === 'F2 * соs30 + F1 * соs60 – RAС – RAВ * соs30 = 0' ||
+				example3 === 'F1 * соs60 + F2 * соs30 – RAС – RAВ * соs30 = 0' ||
+				example3 === 'F2 * соs30 – RAС – F1 * соs60 – RAВ * соs30 = 0' ||
+				example3 === 'F1 * соs60 – RAС – F2 * соs30 – RAВ * соs30 = 0' ||
+				example3 === '– RAВ * соs30 – RAС + F2 * соs30 + F1 * соs60 = 0' ||
+				example3 === '– RAВ * соs30 – RAС + F1 * соs60 + F2 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1414,7 +1657,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 2 &&
-			example3 === 'F2 * соs30 - F1 * соs60 + RAС – RAВ * соs30 = 0'
+			(example3 === 'F2 * соs30 - F1 * соs60 + RAС – RAВ * соs30 = 0' ||
+				example3 === '- F1 * соs60 + F2 * соs30 + RAС – RAВ * соs30 = 0' ||
+				example3 === 'RAС – RAВ * соs30 + F2 * соs30 - F1 * соs60 = 0' ||
+				example3 === 'RAС – RAВ * соs30 - F1 * соs60 + F2 * соs30 = 0' ||
+				example3 === 'RAС – RAВ * соs30 + F1 * соs60 + F2 * соs30 = 0' ||
+				example3 === 'RAС – RAВ * соs30 + F2 * соs30 + F1 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1423,7 +1671,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 3 &&
-			example3 === 'RAС * соs60 – RAВ * соs60 - F2 = 0'
+			(example3 === 'RAС * соs60 – RAВ * соs60 - F2 = 0' ||
+				example3 === 'RAВ * соs60 – RAС * соs60 - F2 = 0' ||
+				example3 === 'RAВ * соs60 - F2 – RAС * соs60 = 0' ||
+				example3 === 'RAВ * соs60 - F2 - RAС * соs60 = 0' ||
+				example3 === '- RAВ * соs60 - F2 – RAС * соs60 = 0' ||
+				example3 === '- RAВ * соs60 - F2 - RAС * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1432,7 +1685,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 4 &&
-			example3 === '-RAС - F2 * соs30 + RAВ * соs30 + F1 * соs60 = 0'
+			(example3 === '-RAС - F2 * соs30 + RAВ * соs30 + F1 * соs60 = 0' ||
+				example3 === 'RAВ * соs30 + F1 * соs60 - F2 * соs30 – RAС = 0' ||
+				example3 === 'RAВ * соs30 - F2 * соs30 + F1 * соs60 – RAС = 0' ||
+				example3 === '-RAС - F2 * соs30 + RAВ * соs30 + F1 * соs60 = 0' ||
+				example3 === '-RAС - F2 * соs30 + F1 * соs60 + RAВ * соs30 = 0' ||
+				example3 === 'RAВ * соs30 + F1 * соs60 - RAС - F2 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1441,7 +1699,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 5 &&
-			example3 === 'F2 * соs30 + F1 * соs60 - RAС - RAВ * соs30 = 0'
+			(example3 === 'F2 * соs30 + F1 * соs60 - RAС - RAВ * соs30 = 0' ||
+				example3 === 'F1 * соs60 + F2 * соs30 - RAС - RAВ * соs30 = 0' ||
+				example3 === 'F2 * соs30 – RAС - F1 * соs60 - RAВ * соs30 = 0' ||
+				example3 === 'F1 * соs60 - RAС - F2 * соs30 - RAВ * соs30 = 0' ||
+				example3 === '– RAВ * соs30 – RAС + F2 * соs30 + F1 * соs60 = 0' ||
+				example3 === '– RAВ * соs30 – RAС + F1 * соs60 + F2 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1450,7 +1713,18 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 6 &&
-			example3 === 'RAВ + F2 * соs60 - F1 * соs30 -RAС * соs60 = 0'
+			(example3 === 'RAВ + F2 * соs60 - F1 * соs30 - RAС * соs60 = 0' ||
+				example3 === 'RAВ - F1 * соs30 - F2 * соs60 + RAС * соs60 = 0' ||
+				example3 === 'RAВ - F2 * соs60 - F1 * соs30 - RAС * соs60 = 0' ||
+				example3 === 'RAВ - F2 * соs60 - RAС * соs60 - F1 * соs30 = 0' ||
+				example3 === 'RAВ - F1 * соs30 - RAС * соs60 - F2 * соs60 = 0' ||
+				example3 === 'RAВ + F2 * соs60 - RAС * соs60 - F1 * соs30 = 0' ||
+				example3 === '-RAС - RAВ * соs60 - F2 * соs30 + F1 * соs60 = 0' ||
+				example3 === '-RAС - RAВ * соs60 - F2 * соs30 - F1 * соs60 = 0' ||
+				example3 === '-RAС - F2 * соs30 - RAВ * соs60 + F1 * соs60 = 0' ||
+				example3 === '-RAС - F2 * соs30 - F1 * соs60 - RAВ * соs60 = 0' ||
+				example3 === '-RAС - F1 * соs30 - RAВ * соs60 - F2 * соs60 = 0' ||
+				example3 === '-RAС - F1 * соs30 - F2 * соs60 - RAВ * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1459,7 +1733,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 7 &&
-			example3 === '- RAС - RAВ * соs60 - F2* соs30 + F1 * соs60° = 0'
+			(example3 === '- RAС - RAВ * соs60 - F2 * соs30 + F1 * соs60 = 0' ||
+				example3 === '- RAС - F2 * соs30 + F1 * соs60 - RAВ * соs60 = 0' ||
+				example3 === '- RAС - F2 * соs30 - RAВ * соs60 + F1 * соs60 = 0' ||
+				example3 === '- RAС + F1 * соs60 - F2 * соs30 - RAВ * соs60 = 0' ||
+				example3 === '- RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0' ||
+				example3 === '- RAС - RAВ * соs60 - F2 * соs30 + F1 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1468,7 +1747,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 8 &&
-			example3 === 'F2 * соs30 - F1 * соs60 -RAС - RAВ * соs30 = 0'
+			(example3 === 'F2 * соs30 - F1 * соs60 - RAС - RAВ * соs30 = 0' ||
+				example3 === 'F1 * соs60 - F2 * соs30 - RAВ * соs30 - RAС = 0' ||
+				example3 === '- RAС - RAВ * соs30 - F2 * соs30 + F1 * соs60 = 0' ||
+				example3 === '- RAВ * соs30 - RAС + F2 * соs30 + F1 * соs60 = 0' ||
+				example3 === '- RAВ * соs30 - RAС + F1 * соs60 + F2 * соs30 = 0' ||
+				example3 === 'F2 * соs30 - F1 * соs60 - RAВ * соs30 - RAС = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1477,16 +1761,27 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 9 &&
-			example3 === 'RAВ * соs60 - F1 * соs30 - RAС - F2 * соs60 = 0'
+			(example3 === 'RAВ * соs60 - F1 * соs30 - RAС - F2 * соs60 = 0' ||
+				example3 === 'RAВ * соs60 - RAС - F1 * соs30 - F2 * соs60 = 0' ||
+				example3 === 'RAВ * соs60 - RAС - F2 * соs60 - F1 * соs30 = 0' ||
+				example3 === 'RAВ * соs60 - F2 * соs60 - RAС - F1 * соs30 = 0' ||
+				example3 === 'RAВ * соs60 - F2 * соs60 - F1 * соs30 - RAС = 0' ||
+				example3 === 'RAВ * соs60 - RAС - F2 * соs60 - F1 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
 			if (isNeedToShowValueToExample1 && isNeedToShowValueToExample2) {
 				setIsNeedToShowValueToExample3(true)
 			}
-		} else if (
+		}
+		if (
 			activeIndexOfKronshteinImg === 10 &&
-			example3 === 'RAВ + RAС * соs60 + F1 * соs30 - F2 * соs60 = 0'
+			(example3 === 'RAВ + RAС * соs60 + F1 * соs30 - F2 * соs60 = 0' ||
+				example3 === 'RAВ + RAС * соs60 - F2 * соs60 + F1 * соs30 = 0' ||
+				example3 === 'RAВ + F1 * соs30 - F2 * соs60 - RAС * соs60 = 0' ||
+				example3 === 'RAВ + F1 * соs30 - RAС * соs60 - F2 * соs60 = 0' ||
+				example3 === 'RAВ - F2 * соs60 + F1 * соs30 - RAС * соs60 = 0' ||
+				example3 === 'RAВ - F2 * соs60 - RAС * соs60 + F1 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1495,7 +1790,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 11 &&
-			example3 === 'RAВ + RAС * соs60 - F1 * соs30 - F2* соs60 = 0'
+			(example3 === 'RAВ + RAС * соs60 - F1 * соs30 - F2 * соs60 = 0' ||
+				example3 === 'RAВ + RAС * соs60 - F2 * соs60 - F1 * соs30 = 0' ||
+				example3 === 'RAВ + F1 * соs30 - F2 * соs60 - RAС * соs60 = 0' ||
+				example3 === 'RAВ + F1 * соs30 - RAС * соs60 - F2 * соs60 = 0' ||
+				example3 === 'RAВ - F2 * соs60 - F1 * соs30 - RAС * соs60 = 0' ||
+				example3 === 'RAВ - F2 * соs60 - RAС * соs60 - F1 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1504,7 +1804,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 12 &&
-			example3 === 'RAВ + RAС * соs60 - F1 * соs30 - F2 * соs60 = 0'
+			(example3 === 'RAВ + RAС * соs60 - F1 * соs30 - F2 * соs60 = 0' ||
+				example3 === 'RAВ + RAС * соs60 - F2 * соs60 - F1 * соs30 = 0' ||
+				example3 === 'RAВ + F1 * соs30 - F2 * соs60 - RAС * соs60 = 0' ||
+				example3 === 'RAВ + F1 * соs30 - RAС * соs60 - F2 * соs60 = 0' ||
+				example3 === 'RAВ - F2 * соs60 - F1 * соs30 - RAС * соs60 = 0' ||
+				example3 === 'RAВ - F2 * соs60 - RAС * соs60 - F1 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1513,7 +1818,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 13 &&
-			example3 === 'RAС + RAВ * соs30 - F1 * соs30 - F2 * соs60 = 0'
+			(example3 === 'RAС + RAВ * соs30 - F1 * соs30 - F2 * соs60 = 0' ||
+				example3 === 'RAС + RAВ * соs30 - F2 * соs60 - F1 * соs30 = 0' ||
+				example3 === 'RAС + F1 * соs30 - F2 * соs60 - RAВ * соs30 = 0' ||
+				example3 === 'RAС + F1 * соs30 - RAВ * соs30 - F2 * соs60 = 0' ||
+				example3 === 'RAС - F2 * соs60 - F1 * соs30 - RAВ * соs30 = 0' ||
+				example3 === 'RAС - F2 * соs60 - RAВ * соs30 - F1 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1522,7 +1832,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 14 &&
-			example3 === '-RAС - F1 * соs60 + RAВ * соs60 + F2 * соs30 = 0'
+			(example3 === '- RAС - F1 * соs60 + RAВ * соs60 + F2 * соs30 = 0' ||
+				example3 === '- RAС - F1 * соs60 + F2 * соs30 + RAВ * соs60 = 0' ||
+				example3 === '- RAС + RAВ * соs60 + F2 * соs30 - F1 * соs60 = 0' ||
+				example3 === '- RAС + RAВ * соs60 - F1 * соs60 + F2 * соs30 = 0' ||
+				example3 === '- F2 * соs30 - RAС + F1 * соs60 + RAВ * соs60 = 0' ||
+				example3 === '- F2 * соs30 - RAС + RAВ * соs60 + F1 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1531,7 +1846,14 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 15 &&
-			example3 === 'RAВ * соs45 + F1 * соs60 - RAС * соs45 - F2 = 0'
+			(example3 === 'RAВ * соs45 + F1 * соs60 - RAС * соs45 - F2 = 0' ||
+				example3 === 'RAВ * соs45 - F2 + F1 * соs60 - RAС * соs45 = 0' ||
+				example3 === 'RAВ * соs45 + F1 * соs60 - F2 - RAС * соs45 = 0' ||
+				example3 === 'RAВ * соs45 - F2 - RAС * соs45 + F1 * соs60 = 0' ||
+				example3 === 'F1 * соs60 + RAВ * соs45 - RAС * соs45 - F2 = 0' ||
+				example3 === 'F1 * соs60 - F2 + RAВ * соs45 - RAС * соs45 = 0' ||
+				example3 === 'F1 * соs60 + RAВ * соs45 - F2 - RAС * соs45 = 0' ||
+				example3 === 'F1 * соs60 - F2 - RAС * соs45 + RAВ * соs45 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1540,7 +1862,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 16 &&
-			example3 === '-RAС - RAВ * соs30 + F1 * соs30 + F2 * соs60 = 0'
+			(example3 === '- RAС - RAВ * соs30 + F1 * соs30 + F2 * соs60 = 0' ||
+				example3 === '- RAС - F2 * соs30 + F1 * соs30 + RAВ * соs60 = 0' ||
+				example3 === '- RAС - RAВ * соs30 + F2 * соs60 + F1 * соs30 = 0' ||
+				example3 === '- RAС - F2 * соs30 + RAВ * соs60 + F1 * соs30 = 0' ||
+				example3 === '- F2 * соs30 - RAС + F1 * соs30 + RAВ * соs60 = 0' ||
+				example3 === '- F2 * соs30 - RAС + RAВ * соs60 + F1 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1549,7 +1876,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 17 &&
-			example3 === '-RAС - F2 * соs30 + RAВ * соs30 + F1 * соs60 = 0'
+			(example3 === '- RAС - F2 * соs30 + RAВ * соs30 + F1 * соs60 = 0' ||
+				example3 === '- RAС - F2 * соs30 + F1 * соs60 + RAВ * соs30 = 0' ||
+				example3 === '- RAС - RAВ * соs30 + RAВ * соs30 + F1 * соs60 = 0' ||
+				example3 === '- RAС - RAВ * соs30 + F1 * соs60 + RAВ * соs30 = 0' ||
+				example3 === '- F2 * соs30 - RAС + F1 * соs60 + RAВ * соs30 = 0' ||
+				example3 === '- F2 * соs30 - RAС + RAВ * соs30 + F1 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1558,7 +1890,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 18 &&
-			example3 === 'F1 + F2 * соs60 - RAС * соs30 - RAВ * соs30 = 0'
+			(example3 === 'F1 + F2 * соs60 - RAС * соs30 - RAВ * соs30 = 0' ||
+				example3 === 'F1 - RAС * соs30 + F2 * соs60 - RAВ * соs30 = 0' ||
+				example3 === 'F1 + F2 * соs60 - RAВ * соs30 - RAС * соs30 = 0' ||
+				example3 === 'F1 - RAВ * соs30 + F2 * соs60 - RAС * соs30 = 0' ||
+				example3 === '- RAС * соs30 + F1 + F2 * соs60 - RAВ * соs30 = 0' ||
+				example3 === '- RAС * соs30 + F1 - RAВ * соs30 + F2 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1567,7 +1904,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 19 &&
-			example3 === 'RAС + F1 * соs30 + F2 * соs60 - RAВ * соs60 = 0'
+			(example3 === 'RAС + F1 * соs30 + F2 * соs60 - RAВ * соs60 = 0' ||
+				example3 === 'RAС + F1 * соs30 - RAВ * соs60 + F2 * соs60 = 0' ||
+				example3 === 'RAС + F2 * соs60 + F1 * соs30 - RAВ * соs60 = 0' ||
+				example3 === 'RAС + F2 * соs60 - RAВ * соs60 + F1 * соs30 = 0' ||
+				example3 === 'F1 * соs30 + RAС + F2 * соs60 - RAВ * соs60 = 0' ||
+				example3 === 'F1 * соs30 + RAС - RAВ * соs60 + F2 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1576,7 +1918,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 20 &&
-			example3 === 'F2 + RAВ * соs60 - RAС * соs60 - F1 * соs60 = 0'
+			(example3 === 'F2 + RAВ * соs60 - RAС * соs60 - F1 * соs60 = 0' ||
+				example3 === 'F2 - F1 * соs60 + RAВ * соs60 - RAС * соs60 = 0' ||
+				example3 === 'F2 + RAВ * соs60 - F1 * соs60 - RAС * соs60 = 0' ||
+				example3 === 'F2 - RAС * соs60 + RAВ * соs60 - F1 * соs60 = 0' ||
+				example3 === '- RAС * соs60 + F2 + RAВ * соs60 - F1 * соs60 = 0' ||
+				example3 === '- RAС * соs60 + F2 - F1 * соs60 + RAВ * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1585,7 +1932,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 21 &&
-			example3 === 'RAВ * соs60 - RAС * соs30 - F1 = 0'
+			(example3 === 'RAВ * соs60 - RAС * соs30 - F1 = 0' ||
+				example3 === 'RAВ * соs60 - F1 - RAС * соs30 = 0' ||
+				example3 === 'RAВ * соs60 - RAС * соs30 + F1 = 0' ||
+				example3 === 'RAВ * соs60 + F1 - RAС * соs30 = 0' ||
+				example3 === '- RAС * соs30 + RAВ * соs60 - F1 = 0' ||
+				example3 === '- RAС * соs30 - F1 + RAВ * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1594,7 +1946,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 22 &&
-			example3 === 'F1 + RAВ* соs45 - RAС * соs45 = 0'
+			(example3 === 'F1 + RAВ* соs45 - RAС * соs45 = 0' ||
+				example3 === 'F1 - RAС * соs45 + RAВ* соs45 = 0' ||
+				example3 === 'RAВ* соs45 + F1 - RAС * соs45 = 0' ||
+				example3 === '- RAС * соs45 + F1 + RAВ* соs45 = 0' ||
+				example3 === 'RAВ* соs45 - RAС * соs45 + F1 = 0' ||
+				example3 === '- RAС * соs45 + RAВ* соs45 + F1 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1603,7 +1960,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 23 &&
-			example3 === 'F2 - RAС * соs30 - F1 * соs60 = 0'
+			(example3 === 'F2 - RAС * соs30 - F1 * соs60 = 0' ||
+				example3 === 'F2 - F1 * соs60 - RAС * соs30 = 0' ||
+				example3 === 'F2 - RAС * соs30 - RAВ * соs60 = 0' ||
+				example3 === 'F2 - RAВ * соs60 - RAС * соs30 = 0' ||
+				example3 === '- RAС * соs30 - F1 * соs60 + F2 = 0' ||
+				example3 === '- RAС * соs30 - RAВ * соs60 + F2 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1612,7 +1974,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 24 &&
-			example3 === '-RAС - RAВ * соs30 + F1* соs60 = 0'
+			(example3 === '-RAС - RAВ * соs30 + F1 * соs60 = 0' ||
+				example3 === '-RAС - RAВ * соs30 + F1 * соs60 = 0' ||
+				example3 === 'F1 * соs60 + F1 * соs60 - RAВ * соs30 - RAС = 0' ||
+				example3 === 'F1 * соs60 + F1 * соs60 - RAВ * соs30 - RAС = 0' ||
+				example3 === '-RAС - RAВ * соs30 + F1 * соs60 + F1 * соs60 = 0' ||
+				example3 === '-RAС - RAВ * соs30 + F1 * соs60 + F1 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1621,7 +1988,14 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 25 &&
-			example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs 75° = 0'
+			(example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs 75° = 0' ||
+				example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs75° = 0' ||
+				example3 ===
+					'F1 * соs45 + F1 * соs45 - F2 * соs75° + RAВ * соs45 = 0' ||
+				example3 ===
+					'F1 * соs45 + F1 * соs45 - F2 * соs 75° + RAВ * соs45 = 0' ||
+				example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs 75° = 0' ||
+				example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs75° = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1630,7 +2004,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 26 &&
-			example3 === 'F2 + RAВ * соs60 - F1 * соs60 = 0'
+			(example3 === 'F2 + RAВ * соs60 - F1 * соs60 = 0' ||
+				example3 === 'F2 - F1 * соs60 + RAВ * соs60 = 0' ||
+				example3 === 'F2 + RAВ * соs60 - F1 * соs60 = 0' ||
+				example3 === 'F2 - F1 * соs60 + RAВ * соs60 = 0' ||
+				example3 === 'F2 + RAВ * соs60 - F1 * соs60 + F1 * соs60 = 0' ||
+				example3 === 'F2 - F1 * соs60 + RAВ * соs60 + F1 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1639,7 +2018,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 27 &&
-			example3 === 'RAВ * соs45 - F2 * соs45 - RAС = 0'
+			(example3 === 'RAВ * соs45 - F2 * соs45 - RAС = 0' ||
+				example3 === 'RAВ * соs45 - F2 * соs45 - RAС = 0' ||
+				example3 === 'RAВ * соs45 - RAС - F2 * соs45 = 0' ||
+				example3 === 'RAВ * соs45 - RAС - F2 * соs45 = 0' ||
+				example3 === '-RAС - F2 * соs45 + RAВ * соs45 = 0' ||
+				example3 === '-RAС - F2 * соs45 + RAВ * соs45 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1648,7 +2032,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 28 &&
-			example3 === 'F1 + RAВ * соs - RAС * соs60 = 0'
+			(example3 === 'F1 + RAВ * соs - RAС * соs60 = 0' ||
+				example3 === 'F1 * соs - RAС * соs60 + RAВ = 0' ||
+				example3 === 'F1 + RAВ * соs - RAС * соs60 = 0' ||
+				example3 === 'F1 * соs - RAС * соs60 + RAВ = 0' ||
+				example3 === 'F1 + RAВ * соs - RAС * соs60 + F1 * соs60 = 0' ||
+				example3 === 'F1 * соs - RAС * соs60 + RAВ + F1 * соs60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1657,7 +2046,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 29 &&
-			example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0'
+			(example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0' ||
+				example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0' ||
+				example3 === 'F1 * соs60 - F2 * соs30 + RAВ * соs60 - RAС = 0' ||
+				example3 === 'F1 * соs60 - F2 * соs30 + RAВ * соs60 - RAС = 0' ||
+				example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0' ||
+				example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1666,7 +2060,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 30 &&
-			example3 === 'RAВ * соs30 - RAС * соs45- F1 = 0'
+			(example3 === 'RAВ * соs30 - RAС * соs45 - F1 = 0' ||
+				example3 === 'RAВ * соs30 - F1 - RAС * соs45 = 0' ||
+				example3 === 'RAВ * соs30 - RAС * соs45 + F1 = 0' ||
+				example3 === 'RAВ * соs30 - F1 + RAС * соs45 = 0' ||
+				example3 === 'RAВ * соs30 - RAС * соs45 - F1 = 0' ||
+				example3 === 'RAВ * соs30 - F1 - RAС * соs45 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1678,8 +2077,6 @@ function App() {
 		}
 	}
 
-
-
 	return (
 		<div className='App'>
 			<div className='build'>
@@ -1688,29 +2085,18 @@ function App() {
 					onClick={createAreaInput}
 					ref={buildAreRef}
 				>
-					<div className='build__area-top'>
+					<div
+						className='build__area-top'
+						style={{ paddingLeft: '100px', boxSizing: 'border-box' }}
+					>
 						<div className='build__area-row' style={{ marginBottom: '100px' }}>
 							<div
 								className='build__area-column'
 								onClick={e => e.stopPropagation()}
 							>
 								<p>Дано</p>
-								<p>
-									F1 ={' '}
-									<input
-										type='text'
-										value={f1}
-										onChange={e => setF1(e.target.value)}
-									/>
-								</p>
-								<p>
-									F2 ={' '}
-									<input
-										type='text'
-										value={f2}
-										onChange={e => setF2(e.target.value)}
-									/>
-								</p>
+								<p>F1 ={f1}</p>
+								<p>F2 = {f2}</p>
 								<p>
 									Rab -{' '}
 									{solutionValueToExample1 && isNeedToShowValueToExample1
@@ -1750,7 +2136,13 @@ function App() {
 										gridTemplateColumns: '50px 50px 50px 50px',
 									}}
 								>
-									<div onClick={() => setActiveIndexOfKronshteinImg(1)}>1</div>
+									<div
+										onClick={() => {
+											setActiveIndexOfKronshteinImg(1)
+										}}
+									>
+										1
+									</div>
 									<div onClick={() => setActiveIndexOfKronshteinImg(2)}>2</div>
 									<div onClick={() => setActiveIndexOfKronshteinImg(3)}>3</div>
 									<div onClick={() => setActiveIndexOfKronshteinImg(4)}>4</div>
@@ -1831,7 +2223,7 @@ function App() {
 							</p>
 							<input
 								type='text'
-								placeholder='Складаємо рівняння рівноваги'
+								placeholder='Н: RAВ + F2...'
 								value={example1}
 								onChange={e => {
 									setExample1(e.target.value)
@@ -1856,7 +2248,7 @@ function App() {
 							</p>
 							<input
 								type='text'
-								placeholder='Складаємо рівняння рівноваги'
+								placeholder='Н: RAВ + F2...'
 								value={example2}
 								onChange={e => {
 									setExample2(e.target.value)
@@ -1881,7 +2273,7 @@ function App() {
 							</p>
 							<input
 								type='text'
-								placeholder='Складаємо перевірочне рівняння рівноваги'
+								placeholder='Н: RAВ + F2...'
 								value={example3}
 								onChange={e => {
 									setExample3(e.target.value)
