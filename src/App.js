@@ -35,124 +35,124 @@ import kronshtein9 from './assets/kronshtein9.jpg'
 function App() {
 	const danoValues = [
 		{
-			f1: 5,
-			f2: 15,
+			F1: 5,
+			F2: 15,
 		},
 		{
-			f1: 10,
-			f2: 4,
+			F1: 10,
+			F2: 4,
 		},
 		{
-			f1: 7,
-			f2: 11,
+			F1: 7,
+			F2: 11,
 		},
 		{
-			f1: 8,
-			f2: 16,
+			F1: 8,
+			F2: 16,
 		},
 		{
-			f1: 3,
-			f2: 7,
+			F1: 3,
+			F2: 7,
 		},
 		{
-			f1: 5,
-			f2: 19,
+			F1: 5,
+			F2: 19,
 		},
 		{
-			f1: 6,
-			f2: 9,
+			F1: 6,
+			F2: 9,
 		},
 		{
-			f1: 2,
-			f2: 17,
+			F1: 2,
+			F2: 17,
 		},
 		{
-			f1: 10,
-			f2: 6,
+			F1: 10,
+			F2: 6,
 		},
 		{
-			f1: 7,
-			f2: 15,
+			F1: 7,
+			F2: 15,
 		},
 		{
-			f1: 3,
-			f2: 12,
+			F1: 3,
+			F2: 12,
 		},
 		{
-			f1: 9,
-			f2: 13,
+			F1: 9,
+			F2: 13,
 		},
 		{
-			f1: 5,
-			f2: 14,
+			F1: 5,
+			F2: 14,
 		},
 		{
-			f1: 6,
-			f2: 20,
+			F1: 6,
+			F2: 20,
 		},
 		{
-			f1: 9,
-			f2: 5,
+			F1: 9,
+			F2: 5,
 		},
 		{
-			f1: 4,
-			f2: 14,
+			F1: 4,
+			F2: 14,
 		},
 		{
-			f1: 7,
-			f2: 3,
+			F1: 7,
+			F2: 3,
 		},
 		{
-			f1: 4,
-			f2: 18,
+			F1: 4,
+			F2: 18,
 		},
 		{
-			f1: 9,
-			f2: 3,
+			F1: 9,
+			F2: 3,
 		},
 		{
-			f1: 16,
-			f2: 6,
+			F1: 16,
+			F2: 6,
 		},
 		{
-			f1: 8,
-			f2: 4,
+			F1: 8,
+			F2: 4,
 		},
 		{
-			f1: 14,
-			f2: 8,
+			F1: 14,
+			F2: 8,
 		},
 		{
-			f1: 6,
-			f2: 11,
+			F1: 6,
+			F2: 11,
 		},
 		{
-			f1: 12,
-			f2: 4,
+			F1: 12,
+			F2: 4,
 		},
 		{
-			f1: 2,
-			f2: 19,
+			F1: 2,
+			F2: 19,
 		},
 		{
-			f1: 10,
-			f2: 19,
+			F1: 10,
+			F2: 19,
 		},
 		{
-			f1: 11,
-			f2: 18,
+			F1: 11,
+			F2: 18,
 		},
 		{
-			f1: 7,
-			f2: 16,
+			F1: 7,
+			F2: 16,
 		},
 		{
-			f1: 7,
-			f2: 16,
+			F1: 7,
+			F2: 16,
 		},
 		{
-			f1: 5,
-			f2: 14,
+			F1: 5,
+			F2: 14,
 		},
 	]
 
@@ -190,8 +190,8 @@ function App() {
 	]
 
 	const [activeIndexOfKronshteinImg, setActiveIndexOfKronshteinImg] = useState()
-	const [f1, setF1] = useState('')
-	const [f2, setF2] = useState('')
+	const [F1, setF1] = useState('')
+	const [F2, setF2] = useState('')
 	const [example1, setExample1] = useState('')
 	const [example2, setExample2] = useState('')
 	const [example3, setExample3] = useState('')
@@ -1094,14 +1094,18 @@ function App() {
 	}
 
 	useEffect(() => {
-		setF1(danoValues[activeIndexOfKronshteinImg]?.f1)
-		setF2(danoValues[activeIndexOfKronshteinImg]?.f2)
+		setF1(danoValues[activeIndexOfKronshteinImg]?.F1)
+		setF2(danoValues[activeIndexOfKronshteinImg]?.F2)
 	}, [activeIndexOfKronshteinImg])
+
+	useEffect(() => {
+		console.log(isRightExample2)
+	}, [isRightExample2])
 
 	const solveExample1 = () => {
 		if (
 			activeIndexOfKronshteinImg === 1 &&
-			(example1 === 'F2 - RAВ - RAС * соs30 = 0' ||
+			(example1 === 'F2 - RAB - RAC * cos30 = 0' ||
 				example1 === 'RAB - F2 - RAC * cos30' ||
 				example1 === 'RAB - RAC * cos30 - F2')
 		) {
@@ -1109,248 +1113,248 @@ function App() {
 			setSolutionValueToExample1(6.34)
 		} else if (
 			activeIndexOfKronshteinImg === 2 &&
-			(example1 === 'F2 - RAВ + RAС * соs30 = 0' ||
-				example1 === 'RAС * соs30 - F2 + RAВ = 0' ||
-				example1 === 'RAС * соs30 + RAВ - F2 = 0')
+			(example1 === 'F2 - RAB + RAC * cos30 = 0' ||
+				example1 === 'RAC * cos30 - F2 + RAB = 0' ||
+				example1 === 'RAC * cos30 + RAB - F2 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(21.32)
 		} else if (
 			activeIndexOfKronshteinImg === 3 &&
-			(example1 === 'RAВ + F2 * соs60 - F1 * соs30 + RAС * соs60 = 0' ||
-				example1 === 'F2 * соs60 - F1 * соs30 + RAВ + RAС * соs60 = 0' ||
-				example1 === 'RAС * соs60 - F1 * соs30 + RAВ + F2 * соs60 = 0')
+			(example1 === 'RAB + F2 * cos60 - F1 * cos30 + RAC * cos60 = 0' ||
+				example1 === 'F2 * cos60 - F1 * cos30 + RAB + RAC * cos60 = 0' ||
+				example1 === 'RAC * cos60 - F1 * cos30 + RAB + F2 * cos60 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-6.96)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 4 &&
-			(example1 === 'F1 - RAС * соs60 = 0' ||
-				example1 === '-RAС * соs60 + F1 = 0')
+			(example1 === 'F1 - RAC * cos60 = 0' ||
+				example1 === '-RAC * cos60 + F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(29.86)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 5 &&
-			(example1 === 'F1 - RAС * соs60 = 0' ||
-				example1 === '-RAС * соs60 + F1 = 0')
+			(example1 === 'F1 - RAC * cos60 = 0' ||
+				example1 === '-RAC * cos60 + F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(1.85)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 6 &&
-			(example1 === 'RAВ * соs30 - F1 = 0' ||
-				example1 === '-F1 + RAВ * соs30 = 0')
+			(example1 === 'RAB * cos30 - F1 = 0' ||
+				example1 === '-F1 + RAB * cos30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(5.77)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 7 &&
-			(example1 === '-RAС * соs30 - F2 = 0' ||
-				example1 === '-F2 - RAС * соs30 = 0')
+			(example1 === '-RAC * cos30 - F2 = 0' ||
+				example1 === '-F2 - RAC * cos30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(11.195)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 8 &&
-			(example1 === 'F2 - RAВ - RAС * соs30 = 0' ||
-				example1 === '-RAВ - RAС * соs30 + F2 = 0')
+			(example1 === 'F2 - RAB - RAC * cos30 = 0' ||
+				example1 === '-RAB - RAC * cos30 + F2 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(20.46)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 9 &&
-			(example1 === 'RAВ - RAС * соs60 - F2 = 0' ||
-				example1 === '-F2 + RAВ - RAС * соs60 = 0')
+			(example1 === 'RAB - RAC * cos60 - F2 = 0' ||
+				example1 === '-F2 + RAB - RAC * cos60 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(0.23)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 10 &&
-			(example1 === 'RAВ * соs30 + F1 = 0' ||
-				example1 === 'F1 + RAВ * соs30 = 0')
+			(example1 === 'RAB * cos30 + F1 = 0' ||
+				example1 === 'F1 + RAB * cos30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-8.08)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 11 &&
-			(example1 === 'RAВ * соs30 - F1 = 0' ||
-				example1 === '-F1 + RAВ * соs30 = 0')
+			(example1 === 'RAB * cos30 - F1 = 0' ||
+				example1 === '-F1 + RAB * cos30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(3.46)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 12 &&
-			(example1 === 'RAВ + F2 * соs30 - F1 * соs60 = 0' ||
-				example1 === 'F2 * соs30 - F1 * соs60 + RAВ = 0')
+			(example1 === 'RAB + F2 * cos30 - F1 * cos60 = 0' ||
+				example1 === 'F2 * cos30 - F1 * cos60 + RAB = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-6.76)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 13 &&
-			(example1 === 'RAВ + RAС * соs30 - F1 = 0' ||
-				example1 === '-F1 + RAВ + RAС * соs30 = 0')
+			(example1 === 'RAB + RAC * cos30 - F1 = 0' ||
+				example1 === '-F1 + RAB + RAC * cos30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-19.25)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 14 &&
-			(example1 === 'F2 - RAС * соs30 = 0' ||
-				example1 === '-RAС * соs30 + F2 = 0')
+			(example1 === 'F2 - RAC * cos30 = 0' ||
+				example1 === '-RAC * cos30 + F2 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(17.55)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 15 &&
-			(example1 === 'RAС + F2 * соs45 - F1 * соs15 = 0' ||
-				example1 === 'RAС - F1 * соs15 + F2 * соs45 = 0')
+			(example1 === 'RAC + F2 * cos45 - F1 * cos15 = 0' ||
+				example1 === 'RAC - F1 * cos15 + F2 * cos45 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(5.87)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 16 &&
-			(example1 === 'F1 - RAВ - RAС * соs30 = 0' ||
-				example1 === 'RAВ - F2 - RAС * соs30 = 0' ||
-				example1 === 'RAВ - RAС * соs30 - F1 = 0')
+			(example1 === 'F1 - RAB - RAC * cos30 = 0' ||
+				example1 === 'RAB - F2 - RAC * cos30 = 0' ||
+				example1 === 'RAB - RAC * cos30 - F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-20.25)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 17 &&
-			(example1 === 'RAВ - F2 - RAС * соs30 = 0' ||
-				example1 === 'RAВ - RAС * соs30 - F2 = 0' ||
-				example1 === 'F2 - RAС * соs30 - RAВ = 0')
+			(example1 === 'RAB - F2 - RAC * cos30 = 0' ||
+				example1 === 'RAB - RAC * cos30 - F2 = 0' ||
+				example1 === 'F2 - RAC * cos30 - RAB = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(15.12)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 18 &&
-			(example1 === 'F1 * соs30 + F2 * соs30 - RAС - RAВ * соs60 = 0' ||
-				example1 === 'F2 * соs30 + F1 * соs30 - RAС - RAВ * соs60 = 0' ||
-				example1 === 'RAС * соs60 - RAВ * соs60 - F1 * соs30 - F2 * соs30 = 0')
+			(example1 === 'F1 * cos30 + F2 * cos30 - RAC - RAB * cos60 = 0' ||
+				example1 === 'F2 * cos30 + F1 * cos30 - RAC - RAB * cos60 = 0' ||
+				example1 === 'RAC * cos60 - RAB * cos60 - F1 * cos30 - F2 * cos30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-8.08)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 19 &&
-			(example1 === 'F2 + RAС * соs60 - RAВ = 0' ||
-				example1 === 'RAС * соs60 - RAВ + F2 = 0' ||
-				example1 === 'RAС * соs60 + F2 - RAВ = 0')
+			(example1 === 'F2 + RAC * cos60 - RAB = 0' ||
+				example1 === 'RAC * cos60 - RAB + F2 = 0' ||
+				example1 === 'RAC * cos60 + F2 - RAB = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-2.2)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 20 &&
-			(example1 === 'F2 * соs30 - RAС * соs30 = 0' ||
-				example1 === 'RAС * соs30 - F2 * соs30 = 0' ||
-				example1 === '-RAС * соs30 + F2 * соs30 = 0')
+			(example1 === 'F2 * cos30 - RAC * cos30 = 0' ||
+				example1 === 'RAC * cos30 - F2 * cos30 = 0' ||
+				example1 === '-RAC * cos30 + F2 * cos30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(10)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 21 &&
-			(example1 === 'RAВ - F2 * соs30 - F1 * соs60 = 0' ||
-				example1 === 'RAВ - F1 * соs60 - F2 * соs30 = 0' ||
-				example1 === '-F2 * соs30 - F1 * соs60 + RAВ = 0')
+			(example1 === 'RAB - F2 * cos30 - F1 * cos60 = 0' ||
+				example1 === 'RAB - F1 * cos60 - F2 * cos30 = 0' ||
+				example1 === '-F2 * cos30 - F1 * cos60 + RAB = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(7.46)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 22 &&
-			(example1 === '-RAС + F1 * соs45 + F2 * соs45 = 0' ||
-				example1 === 'F1 * соs45 + F2 * соs45 - RAС = 0' ||
-				example1 === 'F2 * соs45 + F1 * соs45 - RAС = 0')
+			(example1 === '-RAC + F1 * cos45 + F2 * cos45 = 0' ||
+				example1 === 'F1 * cos45 + F2 * cos45 - RAC = 0' ||
+				example1 === 'F2 * cos45 + F1 * cos45 - RAC = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-4.24)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 23 &&
-			(example1 === 'RAВ * соs30 + F2 * соs60 - F1 = 0' ||
-				example1 === 'RAВ * соs30 - F1 + F2 * соs60 = 0' ||
-				example1 === 'F2 * соs60 + RAВ * соs30 - F1 = 0')
+			(example1 === 'RAB * cos30 + F2 * cos60 - F1 = 0' ||
+				example1 === 'RAB * cos30 - F1 + F2 * cos60 = 0' ||
+				example1 === 'F2 * cos60 + RAB * cos30 - F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(0.58)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 24 &&
-			(example1 === 'F1 - RAС * соs60 - F2 * соs30 = 0' ||
-				example1 === '-RAС * соs60 - F2 * соs30 + F1 = 0' ||
-				example1 === '-F2 * соs30 - RAС * соs60 + F1 = 0')
+			(example1 === 'F1 - RAC * cos60 - F2 * cos30 = 0' ||
+				example1 === '-RAC * cos60 - F2 * cos30 + F1 = 0' ||
+				example1 === '-F2 * cos30 - RAC * cos60 + F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-12.79)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 25 &&
-			(example1 === 'RAВ + RAС * соs45 + F2 * соs60 = 0' ||
-				example1 === 'RAВ + F2 * соs60 + RAС * соs45 = 0' ||
-				example1 === 'F2 * соs60 + RAС * соs45 + RAВ = 0')
+			(example1 === 'RAB + RAC * cos45 + F2 * cos60 = 0' ||
+				example1 === 'RAB + F2 * cos60 + RAC * cos45 = 0' ||
+				example1 === 'F2 * cos60 + RAC * cos45 + RAB = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-23.95)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 26 &&
-			(example1 === 'RAВ + F2 * соs60 - RAС * соs30 - F1 = 0' ||
-				example1 === 'RAВ - RAС * соs30 + F2 * соs60 - F1 = 0' ||
-				example1 === 'F2 * соs60 - RAС * соs30 + RAВ - F1 = 0')
+			(example1 === 'RAB + F2 * cos60 - RAC * cos30 - F1 = 0' ||
+				example1 === 'RAB - RAC * cos30 + F2 * cos60 - F1 = 0' ||
+				example1 === 'F2 * cos60 - RAC * cos30 + RAB - F1 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-27.998)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 27 &&
-			(example1 === 'RAВ - F1 * соs45 - RAС * соs45 = 0' ||
-				example1 === 'RAВ - RAС * соs45 - F1 * соs45 = 0' ||
-				example1 === '-F1 * соs45 - RAС * соs45 + RAВ = 0')
+			(example1 === 'RAB - F1 * cos45 - RAC * cos45 = 0' ||
+				example1 === 'RAB - RAC * cos45 - F1 * cos45 = 0' ||
+				example1 === '-F1 * cos45 - RAC * cos45 + RAB = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-2.45)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 28 &&
-			(example1 === 'RAВ + F1 * соs60 + RAС * соs60 - F2 * соs30 = 0' ||
-				example1 === 'RAВ + RAС * соs60 + F1 * соs60 - F2 * соs30 = 0' ||
-				example1 === 'F1 * соs60 + RAС * соs60 + RAВ - F2 * соs30 = 0')
+			(example1 === 'RAB + F1 * cos60 + RAC * cos60 - F2 * cos30 = 0' ||
+				example1 === 'RAB + RAC * cos60 + F1 * cos60 - F2 * cos30 = 0' ||
+				example1 === 'F1 * cos60 + RAC * cos60 + RAB - F2 * cos30 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-2.24)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 29 &&
-			(example1 === '-RAВ + F1 + RAС * соs60 = 0' ||
-				example1 === 'F1 + RAС * соs60 - RAВ = 0' ||
-				example1 === 'RAС * соs60 + F1 - RAВ = 0')
+			(example1 === '-RAB + F1 + RAC * cos60 = 0' ||
+				example1 === 'F1 + RAC * cos60 - RAB = 0' ||
+				example1 === 'RAC * cos60 + F1 - RAB = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(16.24)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 30 &&
-			(example1 === 'RAВ - F1 * соs30 - RAС * соs15 - F2 * соs60 = 0' ||
-				example1 === 'RAВ - F2 * соs60 - RAС * соs15 - F1 * соs30 = 0' ||
-				example1 === 'RAВ - RAС * соs15 - F1 * соs30 - F2 * соs60 = 0')
+			(example1 === 'RAB - F1 * cos30 - RAC * cos15 - F2 * cos60 = 0' ||
+				example1 === 'RAB - F2 * cos60 - RAC * cos15 - F1 * cos30 = 0' ||
+				example1 === 'RAB - RAC * cos15 - F1 * cos30 - F2 * cos60 = 0')
 		) {
 			setIsRightExample1(true)
 			setSolutionValueToExample1(-24.56)
@@ -1363,17 +1367,19 @@ function App() {
 	const solveExample2 = () => {
 		if (
 			activeIndexOfKronshteinImg === 1 &&
-			(example2 === 'RAС * соs60 - F1 = 0' ||
-				example2 === 'F1 - RAС * соs60 = 0')
+			(example2 === 'RAC * cos60 - F1 = 0' ||
+				example2 === 'F1 - RAC * cos60 = 0')
 		) {
+			console.log('qweeeeeeeeeeeeeeeee')
 			setIsRightExample2(true)
+			console.log(isRightExample2)
 			setSolutionValueToExample2(-10)
 			setIsNeedToShowValueToExample2(true)
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 2 &&
-			(example2 === 'RAС * соs60 - F1 = 0' ||
-				example2 === 'F1 - RAС * соs60 = 0')
+			(example2 === 'RAC * cos60 - F1 = 0' ||
+				example2 === 'F1 - RAC * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(20)
@@ -1381,9 +1387,9 @@ function App() {
 			setIsNeedToShowValueToExample1(true)
 		} else if (
 			activeIndexOfKronshteinImg === 3 &&
-			(example2 === 'RAС * соs30 - F2 * соs30 - F1 * соs60 = 0' ||
-				example2 === 'F2 * соs30 - F1 * соs60 - RAС * соs30 = 0' ||
-				example2 === 'F1 * соs60 - F2 * соs30 - RAС * соs30 = 0')
+			(example2 === 'RAC * cos30 - F2 * cos30 - F1 * cos60 = 0' ||
+				example2 === 'F2 * cos30 - F1 * cos60 - RAC * cos30 = 0' ||
+				example2 === 'F1 * cos60 - F2 * cos30 - RAC * cos30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(15.04)
@@ -1391,9 +1397,9 @@ function App() {
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 4 &&
-			(example2 === 'F2 + RAС * соs30 - RAВ = 0' ||
-				example2 === 'RAС * соs30 + F2 - RAВ = 0' ||
-				example2 === 'RAС * соs30 - RAВ + F2 = 0')
+			(example2 === 'F2 + RAC * cos30 - RAB = 0' ||
+				example2 === 'RAC * cos30 + F2 - RAB = 0' ||
+				example2 === 'RAC * cos30 - RAB + F2 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(16)
@@ -1401,236 +1407,234 @@ function App() {
 			// setIsNeedToShowValueToExample2(true);
 		} else if (
 			activeIndexOfKronshteinImg === 5 &&
-			(example2 === 'F2 - RAС * соs30 - RAВ = 0' ||
-				example2 === '-RAС * соs30 + F2 - RAВ = 0' ||
-				example2 === '-RAС * соs30 - RAВ + F2 = 0')
+			(example2 === 'F2 - RAC * cos30 - RAB = 0' ||
+				example2 === '-RAC * cos30 + F2 - RAB = 0' ||
+				example2 === '-RAC * cos30 - RAB + F2 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(6)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 6 &&
-			(example2 === 'F2 + RAВ * соs60 - RAС = 0' ||
-				example2 === 'RAВ * соs60 + F2 - RAС = 0' ||
-				example2 === 'RAВ * соs60 - RAС + F2 = 0')
+			(example2 === 'F2 + RAB * cos60 - RAC = 0' ||
+				example2 === 'RAB * cos60 + F2 - RAC = 0' ||
+				example2 === 'RAB * cos60 - RAC + F2 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(21.89)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 7 &&
-			(example2 === 'RAВ + RAС * соs60 - F1 = 0' ||
-				example2 === 'RAС * соs60 + RAВ - F1 = 0' ||
-				example2 === 'RAС * соs60 - F1 + RAВ = 0')
+			(example2 === 'RAB + RAC * cos60 - F1 = 0' ||
+				example2 === 'RAC * cos60 + RAB - F1 = 0' ||
+				example2 === 'RAC * cos60 - F1 + RAB = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-10.39)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 8 &&
-			(example2 === '-F1 - RAС * соs60 = 0' ||
-				example2 === '-RAС * соs60 - F1 = 0' ||
-				example2 === 'F1 + RAС * соs60 = 0')
+			(example2 === '-F1 - RAC * cos60 = 0' ||
+				example2 === '-RAC * cos60 - F1 = 0' ||
+				example2 === 'F1 + RAC * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-4)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 9 &&
-			(example2 === '-F1 - RAС * соs30 = 0' ||
-				example2 === '-RAС * соs30 - F1 = 0' ||
-				example2 === 'F1 + RAС * соs30 = 0')
+			(example2 === '-F1 - RAC * cos30 = 0' ||
+				example2 === '-RAC * cos30 - F1 = 0' ||
+				example2 === 'F1 + RAC * cos30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-11.55)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 10 &&
-			(example2 === 'RAС + RAВ * соs60 - F2 = 0' ||
-				example2 === 'RAС * соs60 + RAВ - F2 = 0' ||
-				example2 === 'RAС * соs60 - F2 + RAВ = 0')
+			(example2 === 'RAC + RAB * cos60 - F2 = 0' ||
+				example2 === 'RAC * cos60 + RAB - F2 = 0' ||
+				example2 === 'RAC * cos60 - F2 + RAB = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(19.04)
 			setIsNeedToShowValueToExample2(true)
-		}
-		if (
+		} else if (
 			activeIndexOfKronshteinImg === 11 &&
-			(example2 === 'RAС + RAВ * соs60 - F2 = 0' ||
-				example2 === 'RAВ * соs60 + RAС - F2 = 0' ||
-				example2 === 'RAВ * соs60 - F2 + RAС = 0')
+			(example2 === 'RAC + RAB * cos60 - F2 = 0' ||
+				example2 === 'RAB * cos60 + RAC - F2 = 0' ||
+				example2 === 'RAB * cos60 - F2 + RAC = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(10.27)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 12 &&
-			(example2 === 'RAС - F2 * соs60 - F1 * соs30 = 0' ||
-				example2 === '-F2 * соs60 - F1 * соs30 + RAС = 0' ||
-				example2 === '-F2 * соs60 + RAС - F1 * соs30 = 0')
+			(example2 === 'RAC - F2 * cos60 - F1 * cos30 = 0' ||
+				example2 === '-F2 * cos60 - F1 * cos30 + RAC = 0' ||
+				example2 === '-F2 * cos60 + RAC - F1 * cos30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(15.29)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 13 &&
-			(example2 === 'F2 - RAС * соs60 = 0' ||
-				example2 === '-RAС * соs60 + F2 = 0' ||
-				example2 === 'F2 + RAС * соs60 = 0')
+			(example2 === 'F2 - RAC * cos60 = 0' ||
+				example2 === '-RAC * cos60 + F2 = 0' ||
+				example2 === 'F2 + RAC * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(28)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 14 &&
-			(example2 === 'RAВ - RAС * соs60 - F1 = 0' ||
-				example2 === '-RAС * соs60 + RAВ - F1 = 0' ||
-				example2 === 'RAВ * соs60 - F1 - RAС = 0')
+			(example2 === 'RAB - RAC * cos60 - F1 = 0' ||
+				example2 === '-RAC * cos60 + RAB - F1 = 0' ||
+				example2 === 'RAB * cos60 - F1 - RAC = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(23.09)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 15 &&
-			(example2 === 'RAВ - F1 * соs 75° - F2 * соs45 = 0' ||
-				example2 === 'RAВ * соs75° - F1 * соs45 - F2 * соs45 = 0' ||
-				example2 === 'RAВ * соs75° - F2 * соs45 - F1 * соs45 = 0')
+			(example2 === 'RAB - F1 * cos75 - F2 * cos45 = 0' ||
+				example2 === 'RAB * cos75 - F1 * cos45 - F2 * cos45 = 0' ||
+				example2 === 'RAB * cos75 - F2 * cos45 - F1 * cos45 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(5.15)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 16 &&
-			(example2 === '-F2 + RAС * соs60 = 0' ||
-				example2 === '-RAС * соs60 + F2 = 0' ||
-				example2 === 'F2 + RAС * соs60 = 0')
+			(example2 === '-F2 + RAC * cos60 = 0' ||
+				example2 === '-RAC * cos60 + F2 = 0' ||
+				example2 === 'F2 + RAC * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(28)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 17 &&
-			(example2 === '-F1 + RAС * соs60 = 0' ||
-				example2 === '-RAС * соs60 + F1 = 0' ||
-				example2 === 'F1 + RAС * соs60 = 0')
+			(example2 === '-F1 + RAC * cos60 = 0' ||
+				example2 === '-RAC * cos60 + F1 = 0' ||
+				example2 === 'F1 + RAC * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(14)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 18 &&
-			(example2 === 'F2 * соs60 + RAВ * соs30 - F1 * соs60 = 0' ||
-				example2 === 'RAВ * соs30 + F2 * соs60 - F1 * соs60 = 0' ||
-				example2 === 'RAВ * соs30 - F1 * соs60 + F2 * соs60 = 0')
+			(example2 === 'F2 * cos60 + RAB * cos30 - F1 * cos60 = 0' ||
+				example2 === 'RAB * cos30 + F2 * cos60 - F1 * cos60 = 0' ||
+				example2 === 'RAB * cos30 - F1 * cos60 + F2 * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(23.09)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 19 &&
-			(example2 === '-F1 - RAС * соs30 = 0' ||
-				example2 === '-RAС * соs30 - F1 = 0' ||
-				example2 === 'F1 + RAС * соs30 = 0')
+			(example2 === '-F1 - RAC * cos30 = 0' ||
+				example2 === '-RAC * cos30 - F1 = 0' ||
+				example2 === 'F1 + RAC * cos30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-10.39)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 20 &&
-			(example2 === 'RAВ + RAС * соs60 + F2 * соs60 - F1 = 0' ||
-				example2 === 'RAВ * соs60 + RAС + F2 * соs60 - F1 = 0' ||
-				example2 === 'RAВ * соs60 + F2 * соs60 + RAС - F1 = 0')
+			(example2 === 'RAB + RAC * cos60 + F2 * cos60 - F1 = 0' ||
+				example2 === 'RAB * cos60 + RAC + F2 * cos60 - F1 = 0' ||
+				example2 === 'RAB * cos60 + F2 * cos60 + RAC - F1 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(6)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 21 &&
-			(example2 === '-RAС + F2 * соs60 - F1 * соs30 = 0' ||
-				example2 === 'F2 * соs60 - RAС - F1 * соs30 = 0' ||
-				example2 === 'F2 * соs60 - F1 * соs30 - RAС = 0')
+			(example2 === '-RAC + F2 * cos60 - F1 * cos30 = 0' ||
+				example2 === 'F2 * cos60 - RAC - F1 * cos30 = 0' ||
+				example2 === 'F2 * cos60 - F1 * cos30 - RAC = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-4.93)
 			setIsNeedToShowValueToExample2(true)
-		}
-		if (
+		} else if (
 			activeIndexOfKronshteinImg === 22 &&
-			(example2 === 'RAВ + F1 * соs45 - F2 * соs45 = 0' ||
-				example2 === 'F1 * соs45 + RAВ - F2 * соs45 = 0' ||
-				example2 === 'F1 * соs45 - F2 * соs45 + RAВ = 0')
+			(example2 === 'RAB + F1 * cos45 - F2 * cos45 = 0' ||
+				example2 === 'F1 * cos45 + RAB - F2 * cos45 = 0' ||
+				example2 === 'F1 * cos45 - F2 * cos45 + RAB = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(15.55)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 23 &&
-			(example2 === 'F2 * соs30 - RAВ * соs60 - RAС = 0' ||
-				example2 === 'F2 * соs30 - RAС - RAВ * соs60 = 0' ||
-				example2 === 'F2 * соs30 - RAС + RAВ * соs60 = 0')
+			(example2 === 'F2 * cos30 - RAB * cos60 - RAC = 0' ||
+				example2 === 'F2 * cos30 - RAC - RAB * cos60 = 0' ||
+				example2 === 'F2 * cos30 - RAC + RAB * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(9.24)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 24 &&
-			(example2 === '-RAВ - RAС * соs30 + F2 * соs60 = 0' ||
-				example2 === '-RAС * соs30 - RAВ + F2 * соs60 = 0' ||
-				example2 === 'F2 * соs60 - RAВ - RAС * соs30 = 0')
+			(example2 === '-RAB - RAC * cos30 + F2 * cos60 = 0' ||
+				example2 === '-RAC * cos30 - RAB + F2 * cos60 = 0' ||
+				example2 === 'F2 * cos60 - RAB - RAC * cos30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(17.08)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 25 &&
-			(example2 === 'F2 * соs30 - F1 - RAС * соs45 = 0' ||
-				example2 === 'F2 * соs30 - RAС * соs45 - F1 = 0' ||
-				example2 === '-RAС * соs45 + F2 * соs30 - F1 = 0')
+			(example2 === 'F2 * cos30 - F1 - RAC * cos45 = 0' ||
+				example2 === 'F2 * cos30 - RAC * cos45 - F1 = 0' ||
+				example2 === '-RAC * cos45 + F2 * cos30 - F1 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(20.44)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 26 &&
-			(example2 === 'F2 * соs30 + RAС * соs60 = 0' ||
-				example2 === 'RAС * соs60 + F2 * соs30 = 0' ||
-				example2 === 'RAС * соs60 + F2 * соs30 = 0')
+			(example2 === 'F2 * cos30 + RAC * cos60 = 0' ||
+				example2 === 'RAC * cos60 + F2 * cos30 = 0' ||
+				example2 === 'RAC * cos60 + F2 * cos30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-32.91)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 27 &&
-			(example2 === '-F2 - RAС * соs45 + F1 * соs45 = 0' ||
-				example2 === 'F1 * соs45 - RAС * соs45 - F2 = 0' ||
-				example2 === '-RAС * соs45 - F2 + F1 * соs45 = 0')
+			(example2 === '-F2 - RAC * cos45 + F1 * cos45 = 0' ||
+				example2 === 'F1 * cos45 - RAC * cos45 - F2 = 0' ||
+				example2 === '-RAC * cos45 - F2 + F1 * cos45 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-14.46)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 28 &&
-			(example2 === 'F1 * соs30 + F2 * соs60 - RAС * соs30 = 0' ||
-				example2 === 'F1 * соs30 - RAС * соs30 + F2 * соs60 = 0' ||
-				example2 === '-RAС * соs30 + F1 * соs30 + F2 * соs60 = 0')
+			(example2 === 'F1 * cos30 + F2 * cos60 - RAC * cos30 = 0' ||
+				example2 === 'F1 * cos30 - RAC * cos30 + F2 * cos60 = 0' ||
+				example2 === '-RAC * cos30 + F1 * cos30 + F2 * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(16.24)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 29 &&
-			(example2 === 'F2 - RAС * соs30 = 0' ||
-				example2 === '-RAС * соs30 + F2 = 0' ||
-				example2 === 'F2 + RAС * соs30 = 0')
+			(example2 === 'F2 - RAC * cos30 = 0' ||
+				example2 === '-RAC * cos30 + F2 = 0' ||
+				example2 === 'F2 + RAC * cos30 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(18.48)
 			setIsNeedToShowValueToExample2(true)
 		} else if (
 			activeIndexOfKronshteinImg === 30 &&
-			(example2 === 'F1 * соs60 - F2 * соs30 - RAС * соs 75° = 0' ||
-				example2 === '-F2 * соs30 - RAС * соs 75° + F1 * соs60 = 0' ||
-				example2 === '-RAС * соs 75° - F2 * соs30 + F1 * соs60 = 0')
+			(example2 === 'F1 * cos60 - F2 * cos30 - RAC * cos75 = 0' ||
+				example2 === '-F2 * cos30 - RAC * cos75 + F1 * cos60 = 0' ||
+				example2 === '-RAC * cos75 - F2 * cos30 + F1 * cos60 = 0')
 		) {
 			setIsRightExample2(true)
 			setSolutionValueToExample2(-37.16)
@@ -1643,12 +1647,12 @@ function App() {
 	const solveExample3 = () => {
 		if (
 			activeIndexOfKronshteinImg === 1 &&
-			(example3 === 'F2 * соs30 + F1 * соs60 - RAС - RAВ * соs30 = 0' ||
-				example3 === 'F1 * соs60 + F2 * соs30 - RAС - RAВ * соs30 = 0' ||
-				example3 === 'F2 * соs30 - RAС - F1 * соs60 - RAВ * соs30 = 0' ||
-				example3 === 'F1 * соs60 - RAС - F2 * соs30 - RAВ * соs30 = 0' ||
-				example3 === '- RAВ * соs30 - RAС + F2 * соs30 + F1 * соs60 = 0' ||
-				example3 === '- RAВ * соs30 - RAС + F1 * соs60 + F2 * соs30 = 0')
+			(example3 === 'F2 * cos30 + F1 * cos60 - RAC - RAB * cos30 = 0' ||
+				example3 === 'F1 * cos60 + F2 * cos30 - RAC - RAB * cos30 = 0' ||
+				example3 === 'F2 * cos30 - RAC - F1 * cos60 - RAB * cos30 = 0' ||
+				example3 === 'F1 * cos60 - RAC - F2 * cos30 - RAB * cos30 = 0' ||
+				example3 === '- RAB * cos30 - RAC + F2 * cos30 + F1 * cos60 = 0' ||
+				example3 === '- RAB * cos30 - RAC + F1 * cos60 + F2 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1657,12 +1661,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 2 &&
-			(example3 === 'F2 * соs30 - F1 * соs60 + RAС - RAВ * соs30 = 0' ||
-				example3 === '- F1 * соs60 + F2 * соs30 + RAС - RAВ * соs30 = 0' ||
-				example3 === 'RAС - RAВ * соs30 + F2 * соs30 - F1 * соs60 = 0' ||
-				example3 === 'RAС - RAВ * соs30 - F1 * соs60 + F2 * соs30 = 0' ||
-				example3 === 'RAС - RAВ * соs30 + F1 * соs60 + F2 * соs30 = 0' ||
-				example3 === 'RAС - RAВ * соs30 + F2 * соs30 + F1 * соs60 = 0')
+			(example3 === 'F2 * cos30 - F1 * cos60 + RAC - RAB * cos30 = 0' ||
+				example3 === '- F1 * cos60 + F2 * cos30 + RAC - RAB * cos30 = 0' ||
+				example3 === 'RAC - RAB * cos30 + F2 * cos30 - F1 * cos60 = 0' ||
+				example3 === 'RAC - RAB * cos30 - F1 * cos60 + F2 * cos30 = 0' ||
+				example3 === 'RAC - RAB * cos30 + F1 * cos60 + F2 * cos30 = 0' ||
+				example3 === 'RAC - RAB * cos30 + F2 * cos30 + F1 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1671,12 +1675,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 3 &&
-			(example3 === 'RAС * соs60 - RAВ * соs60 - F2 = 0' ||
-				example3 === 'RAВ * соs60 - RAС * соs60 - F2 = 0' ||
-				example3 === 'RAВ * соs60 - F2 - RAС * соs60 = 0' ||
-				example3 === 'RAВ * соs60 - F2 - RAС * соs60 = 0' ||
-				example3 === '- RAВ * соs60 - F2 - RAС * соs60 = 0' ||
-				example3 === '- RAВ * соs60 - F2 - RAС * соs60 = 0')
+			(example3 === 'RAC * cos60 - RAB * cos60 - F2 = 0' ||
+				example3 === 'RAB * cos60 - RAC * cos60 - F2 = 0' ||
+				example3 === 'RAB * cos60 - F2 - RAC * cos60 = 0' ||
+				example3 === 'RAB * cos60 - F2 - RAC * cos60 = 0' ||
+				example3 === '- RAB * cos60 - F2 - RAC * cos60 = 0' ||
+				example3 === '- RAB * cos60 - F2 - RAC * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1685,12 +1689,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 4 &&
-			(example3 === '-RAС - F2 * соs30 + RAВ * соs30 + F1 * соs60 = 0' ||
-				example3 === 'RAВ * соs30 + F1 * соs60 - F2 * соs30 - RAС = 0' ||
-				example3 === 'RAВ * соs30 - F2 * соs30 + F1 * соs60 - RAС = 0' ||
-				example3 === '-RAС - F2 * соs30 + RAВ * соs30 + F1 * соs60 = 0' ||
-				example3 === '-RAС - F2 * соs30 + F1 * соs60 + RAВ * соs30 = 0' ||
-				example3 === 'RAВ * соs30 + F1 * соs60 - RAС - F2 * соs30 = 0')
+			(example3 === '-RAC - F2 * cos30 + RAB * cos30 + F1 * cos60 = 0' ||
+				example3 === 'RAB * cos30 + F1 * cos60 - F2 * cos30 - RAC = 0' ||
+				example3 === 'RAB * cos30 - F2 * cos30 + F1 * cos60 - RAC = 0' ||
+				example3 === '-RAC - F2 * cos30 + RAB * cos30 + F1 * cos60 = 0' ||
+				example3 === '-RAC - F2 * cos30 + F1 * cos60 + RAB * cos30 = 0' ||
+				example3 === 'RAB * cos30 + F1 * cos60 - RAC - F2 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1699,12 +1703,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 5 &&
-			(example3 === 'F2 * соs30 + F1 * соs60 - RAС - RAВ * соs30 = 0' ||
-				example3 === 'F1 * соs60 + F2 * соs30 - RAС - RAВ * соs30 = 0' ||
-				example3 === 'F2 * соs30 - RAС - F1 * соs60 - RAВ * соs30 = 0' ||
-				example3 === 'F1 * соs60 - RAС - F2 * соs30 - RAВ * соs30 = 0' ||
-				example3 === '- RAВ * соs30 - RAС + F2 * соs30 + F1 * соs60 = 0' ||
-				example3 === '- RAВ * соs30 - RAС + F1 * соs60 + F2 * соs30 = 0')
+			(example3 === 'F2 * cos30 + F1 * cos60 - RAC - RAB * cos30 = 0' ||
+				example3 === 'F1 * cos60 + F2 * cos30 - RAC - RAB * cos30 = 0' ||
+				example3 === 'F2 * cos30 - RAC - F1 * cos60 - RAB * cos30 = 0' ||
+				example3 === 'F1 * cos60 - RAC - F2 * cos30 - RAB * cos30 = 0' ||
+				example3 === '- RAB * cos30 - RAC + F2 * cos30 + F1 * cos60 = 0' ||
+				example3 === '- RAB * cos30 - RAC + F1 * cos60 + F2 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1713,18 +1717,18 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 6 &&
-			(example3 === 'RAВ + F2 * соs60 - F1 * соs30 - RAС * соs60 = 0' ||
-				example3 === 'RAВ - F1 * соs30 - F2 * соs60 + RAС * соs60 = 0' ||
-				example3 === 'RAВ - F2 * соs60 - F1 * соs30 - RAС * соs60 = 0' ||
-				example3 === 'RAВ - F2 * соs60 - RAС * соs60 - F1 * соs30 = 0' ||
-				example3 === 'RAВ - F1 * соs30 - RAС * соs60 - F2 * соs60 = 0' ||
-				example3 === 'RAВ + F2 * соs60 - RAС * соs60 - F1 * соs30 = 0' ||
-				example3 === '-RAС - RAВ * соs60 - F2 * соs30 + F1 * соs60 = 0' ||
-				example3 === '-RAС - RAВ * соs60 - F2 * соs30 - F1 * соs60 = 0' ||
-				example3 === '-RAС - F2 * соs30 - RAВ * соs60 + F1 * соs60 = 0' ||
-				example3 === '-RAС - F2 * соs30 - F1 * соs60 - RAВ * соs60 = 0' ||
-				example3 === '-RAС - F1 * соs30 - RAВ * соs60 - F2 * соs60 = 0' ||
-				example3 === '-RAС - F1 * соs30 - F2 * соs60 - RAВ * соs60 = 0')
+			(example3 === 'RAB + F2 * cos60 - F1 * cos30 - RAC * cos60 = 0' ||
+				example3 === 'RAB - F1 * cos30 - F2 * cos60 + RAC * cos60 = 0' ||
+				example3 === 'RAB - F2 * cos60 - F1 * cos30 - RAC * cos60 = 0' ||
+				example3 === 'RAB - F2 * cos60 - RAC * cos60 - F1 * cos30 = 0' ||
+				example3 === 'RAB - F1 * cos30 - RAC * cos60 - F2 * cos60 = 0' ||
+				example3 === 'RAB + F2 * cos60 - RAC * cos60 - F1 * cos30 = 0' ||
+				example3 === '-RAC - RAB * cos60 - F2 * cos30 + F1 * cos60 = 0' ||
+				example3 === '-RAC - RAB * cos60 - F2 * cos30 - F1 * cos60 = 0' ||
+				example3 === '-RAC - F2 * cos30 - RAB * cos60 + F1 * cos60 = 0' ||
+				example3 === '-RAC - F2 * cos30 - F1 * cos60 - RAB * cos60 = 0' ||
+				example3 === '-RAC - F1 * cos30 - RAB * cos60 - F2 * cos60 = 0' ||
+				example3 === '-RAC - F1 * cos30 - F2 * cos60 - RAB * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1733,12 +1737,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 7 &&
-			(example3 === '- RAС - RAВ * соs60 - F2 * соs30 + F1 * соs60 = 0' ||
-				example3 === '- RAС - F2 * соs30 + F1 * соs60 - RAВ * соs60 = 0' ||
-				example3 === '- RAС - F2 * соs30 - RAВ * соs60 + F1 * соs60 = 0' ||
-				example3 === '- RAС + F1 * соs60 - F2 * соs30 - RAВ * соs60 = 0' ||
-				example3 === '- RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0' ||
-				example3 === '- RAС - RAВ * соs60 - F2 * соs30 + F1 * соs60 = 0')
+			(example3 === '- RAC - RAB * cos60 - F2 * cos30 + F1 * cos60 = 0' ||
+				example3 === '- RAC - F2 * cos30 + F1 * cos60 - RAB * cos60 = 0' ||
+				example3 === '- RAC - F2 * cos30 - RAB * cos60 + F1 * cos60 = 0' ||
+				example3 === '- RAC + F1 * cos60 - F2 * cos30 - RAB * cos60 = 0' ||
+				example3 === '- RAC + F1 * cos60 - RAB * cos60 - F2 * cos30 = 0' ||
+				example3 === '- RAC - RAB * cos60 - F2 * cos30 + F1 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1747,12 +1751,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 8 &&
-			(example3 === 'F2 * соs30 - F1 * соs60 - RAС - RAВ * соs30 = 0' ||
-				example3 === 'F1 * соs60 - F2 * соs30 - RAВ * соs30 - RAС = 0' ||
-				example3 === '- RAС - RAВ * соs30 - F2 * соs30 + F1 * соs60 = 0' ||
-				example3 === '- RAВ * соs30 - RAС + F2 * соs30 + F1 * соs60 = 0' ||
-				example3 === '- RAВ * соs30 - RAС + F1 * соs60 + F2 * соs30 = 0' ||
-				example3 === 'F2 * соs30 - F1 * соs60 - RAВ * соs30 - RAС = 0')
+			(example3 === 'F2 * cos30 - F1 * cos60 - RAC - RAB * cos30 = 0' ||
+				example3 === 'F1 * cos60 - F2 * cos30 - RAB * cos30 - RAC = 0' ||
+				example3 === '- RAC - RAB * cos30 - F2 * cos30 + F1 * cos60 = 0' ||
+				example3 === '- RAB * cos30 - RAC + F2 * cos30 + F1 * cos60 = 0' ||
+				example3 === '- RAB * cos30 - RAC + F1 * cos60 + F2 * cos30 = 0' ||
+				example3 === 'F2 * cos30 - F1 * cos60 - RAB * cos30 - RAC = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1761,27 +1765,26 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 9 &&
-			(example3 === 'RAВ * соs60 - F1 * соs30 - RAС - F2 * соs60 = 0' ||
-				example3 === 'RAВ * соs60 - RAС - F1 * соs30 - F2 * соs60 = 0' ||
-				example3 === 'RAВ * соs60 - RAС - F2 * соs60 - F1 * соs30 = 0' ||
-				example3 === 'RAВ * соs60 - F2 * соs60 - RAС - F1 * соs30 = 0' ||
-				example3 === 'RAВ * соs60 - F2 * соs60 - F1 * соs30 - RAС = 0' ||
-				example3 === 'RAВ * соs60 - RAС - F2 * соs60 - F1 * соs30 = 0')
+			(example3 === 'RAB * cos60 - F1 * cos30 - RAC - F2 * cos60 = 0' ||
+				example3 === 'RAB * cos60 - RAC - F1 * cos30 - F2 * cos60 = 0' ||
+				example3 === 'RAB * cos60 - RAC - F2 * cos60 - F1 * cos30 = 0' ||
+				example3 === 'RAB * cos60 - F2 * cos60 - RAC - F1 * cos30 = 0' ||
+				example3 === 'RAB * cos60 - F2 * cos60 - F1 * cos30 - RAC = 0' ||
+				example3 === 'RAB * cos60 - RAC - F2 * cos60 - F1 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
 			if (isNeedToShowValueToExample1 && isNeedToShowValueToExample2) {
 				setIsNeedToShowValueToExample3(true)
 			}
-		}
-		if (
+		} else if (
 			activeIndexOfKronshteinImg === 10 &&
-			(example3 === 'RAВ + RAС * соs60 + F1 * соs30 - F2 * соs60 = 0' ||
-				example3 === 'RAВ + RAС * соs60 - F2 * соs60 + F1 * соs30 = 0' ||
-				example3 === 'RAВ + F1 * соs30 - F2 * соs60 - RAС * соs60 = 0' ||
-				example3 === 'RAВ + F1 * соs30 - RAС * соs60 - F2 * соs60 = 0' ||
-				example3 === 'RAВ - F2 * соs60 + F1 * соs30 - RAС * соs60 = 0' ||
-				example3 === 'RAВ - F2 * соs60 - RAС * соs60 + F1 * соs30 = 0')
+			(example3 === 'RAB + RAC * cos60 + F1 * cos30 - F2 * cos60 = 0' ||
+				example3 === 'RAB + RAC * cos60 - F2 * cos60 + F1 * cos30 = 0' ||
+				example3 === 'RAB + F1 * cos30 - F2 * cos60 - RAC * cos60 = 0' ||
+				example3 === 'RAB + F1 * cos30 - RAC * cos60 - F2 * cos60 = 0' ||
+				example3 === 'RAB - F2 * cos60 + F1 * cos30 - RAC * cos60 = 0' ||
+				example3 === 'RAB - F2 * cos60 - RAC * cos60 + F1 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1790,12 +1793,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 11 &&
-			(example3 === 'RAВ + RAС * соs60 - F1 * соs30 - F2 * соs60 = 0' ||
-				example3 === 'RAВ + RAС * соs60 - F2 * соs60 - F1 * соs30 = 0' ||
-				example3 === 'RAВ + F1 * соs30 - F2 * соs60 - RAС * соs60 = 0' ||
-				example3 === 'RAВ + F1 * соs30 - RAС * соs60 - F2 * соs60 = 0' ||
-				example3 === 'RAВ - F2 * соs60 - F1 * соs30 - RAС * соs60 = 0' ||
-				example3 === 'RAВ - F2 * соs60 - RAС * соs60 - F1 * соs30 = 0')
+			(example3 === 'RAB + RAC * cos60 - F1 * cos30 - F2 * cos60 = 0' ||
+				example3 === 'RAB + RAC * cos60 - F2 * cos60 - F1 * cos30 = 0' ||
+				example3 === 'RAB + F1 * cos30 - F2 * cos60 - RAC * cos60 = 0' ||
+				example3 === 'RAB + F1 * cos30 - RAC * cos60 - F2 * cos60 = 0' ||
+				example3 === 'RAB - F2 * cos60 - F1 * cos30 - RAC * cos60 = 0' ||
+				example3 === 'RAB - F2 * cos60 - RAC * cos60 - F1 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1804,12 +1807,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 12 &&
-			(example3 === 'RAВ + RAС * соs60 - F1 * соs30 - F2 * соs60 = 0' ||
-				example3 === 'RAВ + RAС * соs60 - F2 * соs60 - F1 * соs30 = 0' ||
-				example3 === 'RAВ + F1 * соs30 - F2 * соs60 - RAС * соs60 = 0' ||
-				example3 === 'RAВ + F1 * соs30 - RAС * соs60 - F2 * соs60 = 0' ||
-				example3 === 'RAВ - F2 * соs60 - F1 * соs30 - RAС * соs60 = 0' ||
-				example3 === 'RAВ - F2 * соs60 - RAС * соs60 - F1 * соs30 = 0')
+			(example3 === 'RAB + RAC * cos60 - F1 * cos30 - F2 * cos60 = 0' ||
+				example3 === 'RAB + RAC * cos60 - F2 * cos60 - F1 * cos30 = 0' ||
+				example3 === 'RAB + F1 * cos30 - F2 * cos60 - RAC * cos60 = 0' ||
+				example3 === 'RAB + F1 * cos30 - RAC * cos60 - F2 * cos60 = 0' ||
+				example3 === 'RAB - F2 * cos60 - F1 * cos30 - RAC * cos60 = 0' ||
+				example3 === 'RAB - F2 * cos60 - RAC * cos60 - F1 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1818,12 +1821,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 13 &&
-			(example3 === 'RAС + RAВ * соs30 - F1 * соs30 - F2 * соs60 = 0' ||
-				example3 === 'RAС + RAВ * соs30 - F2 * соs60 - F1 * соs30 = 0' ||
-				example3 === 'RAС + F1 * соs30 - F2 * соs60 - RAВ * соs30 = 0' ||
-				example3 === 'RAС + F1 * соs30 - RAВ * соs30 - F2 * соs60 = 0' ||
-				example3 === 'RAС - F2 * соs60 - F1 * соs30 - RAВ * соs30 = 0' ||
-				example3 === 'RAС - F2 * соs60 - RAВ * соs30 - F1 * соs30 = 0')
+			(example3 === 'RAC + RAB * cos30 - F1 * cos30 - F2 * cos60 = 0' ||
+				example3 === 'RAC + RAB * cos30 - F2 * cos60 - F1 * cos30 = 0' ||
+				example3 === 'RAC + F1 * cos30 - F2 * cos60 - RAB * cos30 = 0' ||
+				example3 === 'RAC + F1 * cos30 - RAB * cos30 - F2 * cos60 = 0' ||
+				example3 === 'RAC - F2 * cos60 - F1 * cos30 - RAB * cos30 = 0' ||
+				example3 === 'RAC - F2 * cos60 - RAB * cos30 - F1 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1832,12 +1835,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 14 &&
-			(example3 === '- RAС - F1 * соs60 + RAВ * соs60 + F2 * соs30 = 0' ||
-				example3 === '- RAС - F1 * соs60 + F2 * соs30 + RAВ * соs60 = 0' ||
-				example3 === '- RAС + RAВ * соs60 + F2 * соs30 - F1 * соs60 = 0' ||
-				example3 === '- RAС + RAВ * соs60 - F1 * соs60 + F2 * соs30 = 0' ||
-				example3 === '- F2 * соs30 - RAС + F1 * соs60 + RAВ * соs60 = 0' ||
-				example3 === '- F2 * соs30 - RAС + RAВ * соs60 + F1 * соs60 = 0')
+			(example3 === '- RAC - F1 * cos60 + RAB * cos60 + F2 * cos30 = 0' ||
+				example3 === '- RAC - F1 * cos60 + F2 * cos30 + RAB * cos60 = 0' ||
+				example3 === '- RAC + RAB * cos60 + F2 * cos30 - F1 * cos60 = 0' ||
+				example3 === '- RAC + RAB * cos60 - F1 * cos60 + F2 * cos30 = 0' ||
+				example3 === '- F2 * cos30 - RAC + F1 * cos60 + RAB * cos60 = 0' ||
+				example3 === '- F2 * cos30 - RAC + RAB * cos60 + F1 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1846,14 +1849,14 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 15 &&
-			(example3 === 'RAВ * соs45 + F1 * соs60 - RAС * соs45 - F2 = 0' ||
-				example3 === 'RAВ * соs45 - F2 + F1 * соs60 - RAС * соs45 = 0' ||
-				example3 === 'RAВ * соs45 + F1 * соs60 - F2 - RAС * соs45 = 0' ||
-				example3 === 'RAВ * соs45 - F2 - RAС * соs45 + F1 * соs60 = 0' ||
-				example3 === 'F1 * соs60 + RAВ * соs45 - RAС * соs45 - F2 = 0' ||
-				example3 === 'F1 * соs60 - F2 + RAВ * соs45 - RAС * соs45 = 0' ||
-				example3 === 'F1 * соs60 + RAВ * соs45 - F2 - RAС * соs45 = 0' ||
-				example3 === 'F1 * соs60 - F2 - RAС * соs45 + RAВ * соs45 = 0')
+			(example3 === 'RAB * cos45 + F1 * cos60 - RAC * cos45 - F2 = 0' ||
+				example3 === 'RAB * cos45 - F2 + F1 * cos60 - RAC * cos45 = 0' ||
+				example3 === 'RAB * cos45 + F1 * cos60 - F2 - RAC * cos45 = 0' ||
+				example3 === 'RAB * cos45 - F2 - RAC * cos45 + F1 * cos60 = 0' ||
+				example3 === 'F1 * cos60 + RAB * cos45 - RAC * cos45 - F2 = 0' ||
+				example3 === 'F1 * cos60 - F2 + RAB * cos45 - RAC * cos45 = 0' ||
+				example3 === 'F1 * cos60 + RAB * cos45 - F2 - RAC * cos45 = 0' ||
+				example3 === 'F1 * cos60 - F2 - RAC * cos45 + RAB * cos45 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1862,12 +1865,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 16 &&
-			(example3 === '- RAС - RAВ * соs30 + F1 * соs30 + F2 * соs60 = 0' ||
-				example3 === '- RAС - F2 * соs30 + F1 * соs30 + RAВ * соs60 = 0' ||
-				example3 === '- RAС - RAВ * соs30 + F2 * соs60 + F1 * соs30 = 0' ||
-				example3 === '- RAС - F2 * соs30 + RAВ * соs60 + F1 * соs30 = 0' ||
-				example3 === '- F2 * соs30 - RAС + F1 * соs30 + RAВ * соs60 = 0' ||
-				example3 === '- F2 * соs30 - RAС + RAВ * соs60 + F1 * соs30 = 0')
+			(example3 === '- RAC - RAB * cos30 + F1 * cos30 + F2 * cos60 = 0' ||
+				example3 === '- RAC - F2 * cos30 + F1 * cos30 + RAB * cos60 = 0' ||
+				example3 === '- RAC - RAB * cos30 + F2 * cos60 + F1 * cos30 = 0' ||
+				example3 === '- RAC - F2 * cos30 + RAB * cos60 + F1 * cos30 = 0' ||
+				example3 === '- F2 * cos30 - RAC + F1 * cos30 + RAB * cos60 = 0' ||
+				example3 === '- F2 * cos30 - RAC + RAB * cos60 + F1 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1876,12 +1879,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 17 &&
-			(example3 === '- RAС - F2 * соs30 + RAВ * соs30 + F1 * соs60 = 0' ||
-				example3 === '- RAС - F2 * соs30 + F1 * соs60 + RAВ * соs30 = 0' ||
-				example3 === '- RAС - RAВ * соs30 + RAВ * соs30 + F1 * соs60 = 0' ||
-				example3 === '- RAС - RAВ * соs30 + F1 * соs60 + RAВ * соs30 = 0' ||
-				example3 === '- F2 * соs30 - RAС + F1 * соs60 + RAВ * соs30 = 0' ||
-				example3 === '- F2 * соs30 - RAС + RAВ * соs30 + F1 * соs60 = 0')
+			(example3 === '- RAC - F2 * cos30 + RAB * cos30 + F1 * cos60 = 0' ||
+				example3 === '- RAC - F2 * cos30 + F1 * cos60 + RAB * cos30 = 0' ||
+				example3 === '- RAC - RAB * cos30 + RAB * cos30 + F1 * cos60 = 0' ||
+				example3 === '- RAC - RAB * cos30 + F1 * cos60 + RAB * cos30 = 0' ||
+				example3 === '- F2 * cos30 - RAC + F1 * cos60 + RAB * cos30 = 0' ||
+				example3 === '- F2 * cos30 - RAC + RAB * cos30 + F1 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1890,12 +1893,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 18 &&
-			(example3 === 'F1 + F2 * соs60 - RAС * соs30 - RAВ * соs30 = 0' ||
-				example3 === 'F1 - RAС * соs30 + F2 * соs60 - RAВ * соs30 = 0' ||
-				example3 === 'F1 + F2 * соs60 - RAВ * соs30 - RAС * соs30 = 0' ||
-				example3 === 'F1 - RAВ * соs30 + F2 * соs60 - RAС * соs30 = 0' ||
-				example3 === '- RAС * соs30 + F1 + F2 * соs60 - RAВ * соs30 = 0' ||
-				example3 === '- RAС * соs30 + F1 - RAВ * соs30 + F2 * соs60 = 0')
+			(example3 === 'F1 + F2 * cos60 - RAC * cos30 - RAB * cos30 = 0' ||
+				example3 === 'F1 - RAC * cos30 + F2 * cos60 - RAB * cos30 = 0' ||
+				example3 === 'F1 + F2 * cos60 - RAB * cos30 - RAC * cos30 = 0' ||
+				example3 === 'F1 - RAB * cos30 + F2 * cos60 - RAC * cos30 = 0' ||
+				example3 === '- RAC * cos30 + F1 + F2 * cos60 - RAB * cos30 = 0' ||
+				example3 === '- RAC * cos30 + F1 - RAB * cos30 + F2 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1904,12 +1907,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 19 &&
-			(example3 === 'RAС + F1 * соs30 + F2 * соs60 - RAВ * соs60 = 0' ||
-				example3 === 'RAС + F1 * соs30 - RAВ * соs60 + F2 * соs60 = 0' ||
-				example3 === 'RAС + F2 * соs60 + F1 * соs30 - RAВ * соs60 = 0' ||
-				example3 === 'RAС + F2 * соs60 - RAВ * соs60 + F1 * соs30 = 0' ||
-				example3 === 'F1 * соs30 + RAС + F2 * соs60 - RAВ * соs60 = 0' ||
-				example3 === 'F1 * соs30 + RAС - RAВ * соs60 + F2 * соs60 = 0')
+			(example3 === 'RAC + F1 * cos30 + F2 * cos60 - RAB * cos60 = 0' ||
+				example3 === 'RAC + F1 * cos30 - RAB * cos60 + F2 * cos60 = 0' ||
+				example3 === 'RAC + F2 * cos60 + F1 * cos30 - RAB * cos60 = 0' ||
+				example3 === 'RAC + F2 * cos60 - RAB * cos60 + F1 * cos30 = 0' ||
+				example3 === 'F1 * cos30 + RAC + F2 * cos60 - RAB * cos60 = 0' ||
+				example3 === 'F1 * cos30 + RAC - RAB * cos60 + F2 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1918,12 +1921,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 20 &&
-			(example3 === 'F2 + RAВ * соs60 - RAС * соs60 - F1 * соs60 = 0' ||
-				example3 === 'F2 - F1 * соs60 + RAВ * соs60 - RAС * соs60 = 0' ||
-				example3 === 'F2 + RAВ * соs60 - F1 * соs60 - RAС * соs60 = 0' ||
-				example3 === 'F2 - RAС * соs60 + RAВ * соs60 - F1 * соs60 = 0' ||
-				example3 === '- RAС * соs60 + F2 + RAВ * соs60 - F1 * соs60 = 0' ||
-				example3 === '- RAС * соs60 + F2 - F1 * соs60 + RAВ * соs60 = 0')
+			(example3 === 'F2 + RAB * cos60 - RAC * cos60 - F1 * cos60 = 0' ||
+				example3 === 'F2 - F1 * cos60 + RAB * cos60 - RAC * cos60 = 0' ||
+				example3 === 'F2 + RAB * cos60 - F1 * cos60 - RAC * cos60 = 0' ||
+				example3 === 'F2 - RAC * cos60 + RAB * cos60 - F1 * cos60 = 0' ||
+				example3 === '- RAC * cos60 + F2 + RAB * cos60 - F1 * cos60 = 0' ||
+				example3 === '- RAC * cos60 + F2 - F1 * cos60 + RAB * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1932,12 +1935,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 21 &&
-			(example3 === 'RAВ * соs60 - RAС * соs30 - F1 = 0' ||
-				example3 === 'RAВ * соs60 - F1 - RAС * соs30 = 0' ||
-				example3 === 'RAВ * соs60 - RAС * соs30 + F1 = 0' ||
-				example3 === 'RAВ * соs60 + F1 - RAС * соs30 = 0' ||
-				example3 === '- RAС * соs30 + RAВ * соs60 - F1 = 0' ||
-				example3 === '- RAС * соs30 - F1 + RAВ * соs60 = 0')
+			(example3 === 'RAB * cos60 - RAC * cos30 - F1 = 0' ||
+				example3 === 'RAB * cos60 - F1 - RAC * cos30 = 0' ||
+				example3 === 'RAB * cos60 - RAC * cos30 + F1 = 0' ||
+				example3 === 'RAB * cos60 + F1 - RAC * cos30 = 0' ||
+				example3 === '- RAC * cos30 + RAB * cos60 - F1 = 0' ||
+				example3 === '- RAC * cos30 - F1 + RAB * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1946,12 +1949,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 22 &&
-			(example3 === 'F1 + RAВ * соs45 - RAС * соs45 = 0' ||
-				example3 === 'F1 - RAС * соs45 + RAВ * соs45 = 0' ||
-				example3 === 'RAВ * соs45 + F1 - RAС * соs45 = 0' ||
-				example3 === '- RAС * соs45 + F1 + RAВ * соs45 = 0' ||
-				example3 === 'RAВ * соs45 - RAС * соs45 + F1 = 0' ||
-				example3 === '- RAС * соs45 + RAВ * соs45 + F1 = 0')
+			(example3 === 'F1 + RAB * cos45 - RAC * cos45 = 0' ||
+				example3 === 'F1 - RAC * cos45 + RAB * cos45 = 0' ||
+				example3 === 'RAB * cos45 + F1 - RAC * cos45 = 0' ||
+				example3 === '- RAC * cos45 + F1 + RAB * cos45 = 0' ||
+				example3 === 'RAB * cos45 - RAC * cos45 + F1 = 0' ||
+				example3 === '- RAC * cos45 + RAB * cos45 + F1 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1960,12 +1963,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 23 &&
-			(example3 === 'F2 - RAС * соs30 - F1 * соs60 = 0' ||
-				example3 === 'F2 - F1 * соs60 - RAС * соs30 = 0' ||
-				example3 === 'F2 - RAС * соs30 - RAВ * соs60 = 0' ||
-				example3 === 'F2 - RAВ * соs60 - RAС * соs30 = 0' ||
-				example3 === '- RAС * соs30 - F1 * соs60 + F2 = 0' ||
-				example3 === '- RAС * соs30 - RAВ * соs60 + F2 = 0')
+			(example3 === 'F2 - RAC * cos30 - F1 * cos60 = 0' ||
+				example3 === 'F2 - F1 * cos60 - RAC * cos30 = 0' ||
+				example3 === 'F2 - RAC * cos30 - RAB * cos60 = 0' ||
+				example3 === 'F2 - RAB * cos60 - RAC * cos30 = 0' ||
+				example3 === '- RAC * cos30 - F1 * cos60 + F2 = 0' ||
+				example3 === '- RAC * cos30 - RAB * cos60 + F2 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1974,12 +1977,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 24 &&
-			(example3 === '-RAС - RAВ * соs30 + F1 * соs60 = 0' ||
-				example3 === '-RAС - RAВ * соs30 + F1 * соs60 = 0' ||
-				example3 === 'F1 * соs60 + F1 * соs60 - RAВ * соs30 - RAС = 0' ||
-				example3 === 'F1 * соs60 + F1 * соs60 - RAВ * соs30 - RAС = 0' ||
-				example3 === '-RAС - RAВ * соs30 + F1 * соs60 + F1 * соs60 = 0' ||
-				example3 === '-RAС - RAВ * соs30 + F1 * соs60 + F1 * соs60 = 0')
+			(example3 === '-RAC - RAB * cos30 + F1 * cos60 = 0' ||
+				example3 === '-RAC - RAB * cos30 + F1 * cos60 = 0' ||
+				example3 === 'F1 * cos60 + F1 * cos60 - RAB * cos30 - RAC = 0' ||
+				example3 === 'F1 * cos60 + F1 * cos60 - RAB * cos30 - RAC = 0' ||
+				example3 === '-RAC - RAB * cos30 + F1 * cos60 + F1 * cos60 = 0' ||
+				example3 === '-RAC - RAB * cos30 + F1 * cos60 + F1 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -1988,14 +1991,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 25 &&
-			(example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs 75° = 0' ||
-				example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs75° = 0' ||
-				example3 ===
-					'F1 * соs45 + F1 * соs45 - F2 * соs75° + RAВ * соs45 = 0' ||
-				example3 ===
-					'F1 * соs45 + F1 * соs45 - F2 * соs 75° + RAВ * соs45 = 0' ||
-				example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs 75° = 0' ||
-				example3 === 'RAС + RAВ * соs45 + F1 * соs45 - F2 * соs75° = 0')
+			(example3 === 'RAC + RAB * cos45 + F1 * cos45 - F2 * cos75 = 0' ||
+				example3 === 'RAC + RAB * cos45 + F1 * cos45 - F2 * cos75 = 0' ||
+				example3 === 'F1 * cos45 + F1 * cos45 - F2 * cos75 + RAB * cos45 = 0' ||
+				example3 === 'F1 * cos45 + F1 * cos45 - F2 * cos75 + RAB * cos45 = 0' ||
+				example3 === 'RAC + RAB * cos45 + F1 * cos45 - F2 * cos75 = 0' ||
+				example3 === 'RAC + RAB * cos45 + F1 * cos45 - F2 * cos75 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -2004,12 +2005,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 26 &&
-			(example3 === 'F2 + RAВ * соs60 - F1 * соs60 = 0' ||
-				example3 === 'F2 - F1 * соs60 + RAВ * соs60 = 0' ||
-				example3 === 'F2 + RAВ * соs60 - F1 * соs60 = 0' ||
-				example3 === 'F2 - F1 * соs60 + RAВ * соs60 = 0' ||
-				example3 === 'F2 + RAВ * соs60 - F1 * соs60 + F1 * соs60 = 0' ||
-				example3 === 'F2 - F1 * соs60 + RAВ * соs60 + F1 * соs60 = 0')
+			(example3 === 'F2 + RAB * cos60 - F1 * cos60 = 0' ||
+				example3 === 'F2 - F1 * cos60 + RAB * cos60 = 0' ||
+				example3 === 'F2 + RAB * cos60 - F1 * cos60 = 0' ||
+				example3 === 'F2 - F1 * cos60 + RAB * cos60 = 0' ||
+				example3 === 'F2 + RAB * cos60 - F1 * cos60 + F1 * cos60 = 0' ||
+				example3 === 'F2 - F1 * cos60 + RAB * cos60 + F1 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -2018,12 +2019,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 27 &&
-			(example3 === 'RAВ * соs45 - F2 * соs45 - RAС = 0' ||
-				example3 === 'RAВ * соs45 - F2 * соs45 - RAС = 0' ||
-				example3 === 'RAВ * соs45 - RAС - F2 * соs45 = 0' ||
-				example3 === 'RAВ * соs45 - RAС - F2 * соs45 = 0' ||
-				example3 === '-RAС - F2 * соs45 + RAВ * соs45 = 0' ||
-				example3 === '-RAС - F2 * соs45 + RAВ * соs45 = 0')
+			(example3 === 'RAB * cos45 - F2 * cos45 - RAC = 0' ||
+				example3 === 'RAB * cos45 - F2 * cos45 - RAC = 0' ||
+				example3 === 'RAB * cos45 - RAC - F2 * cos45 = 0' ||
+				example3 === 'RAB * cos45 - RAC - F2 * cos45 = 0' ||
+				example3 === '-RAC - F2 * cos45 + RAB * cos45 = 0' ||
+				example3 === '-RAC - F2 * cos45 + RAB * cos45 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -2032,12 +2033,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 28 &&
-			(example3 === 'F1 + RAВ * соs - RAС * соs60 = 0' ||
-				example3 === 'F1 * соs - RAС * соs60 + RAВ = 0' ||
-				example3 === 'F1 + RAВ * соs - RAС * соs60 = 0' ||
-				example3 === 'F1 * соs - RAС * соs60 + RAВ = 0' ||
-				example3 === 'F1 + RAВ * соs - RAС * соs60 + F1 * соs60 = 0' ||
-				example3 === 'F1 * соs - RAС * соs60 + RAВ + F1 * соs60 = 0')
+			(example3 === 'F1 + RAB * соs - RAC * cos60 = 0' ||
+				example3 === 'F1 * соs - RAC * cos60 + RAB = 0' ||
+				example3 === 'F1 + RAB * соs - RAC * cos60 = 0' ||
+				example3 === 'F1 * соs - RAC * cos60 + RAB = 0' ||
+				example3 === 'F1 + RAB * соs - RAC * cos60 + F1 * cos60 = 0' ||
+				example3 === 'F1 * соs - RAC * cos60 + RAB + F1 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -2046,12 +2047,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 29 &&
-			(example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0' ||
-				example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0' ||
-				example3 === 'F1 * соs60 - F2 * соs30 + RAВ * соs60 - RAС = 0' ||
-				example3 === 'F1 * соs60 - F2 * соs30 + RAВ * соs60 - RAС = 0' ||
-				example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0' ||
-				example3 === 'RAС + F1 * соs60 - RAВ * соs60 - F2 * соs30 = 0')
+			(example3 === 'RAC + F1 * cos60 - RAB * cos60 - F2 * cos30 = 0' ||
+				example3 === 'RAC + F1 * cos60 - RAB * cos60 - F2 * cos30 = 0' ||
+				example3 === 'F1 * cos60 - F2 * cos30 + RAB * cos60 - RAC = 0' ||
+				example3 === 'F1 * cos60 - F2 * cos30 + RAB * cos60 - RAC = 0' ||
+				example3 === 'RAC + F1 * cos60 - RAB * cos60 - F2 * cos30 = 0' ||
+				example3 === 'RAC + F1 * cos60 - RAB * cos60 - F2 * cos30 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -2060,12 +2061,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 30 &&
-			(example3 === 'RAВ * соs30 - RAС * соs45 - F1 = 0' ||
-				example3 === 'RAВ * соs30 - F1 - RAС * соs45 = 0' ||
-				example3 === 'RAВ * соs30 - RAС * соs45 + F1 = 0' ||
-				example3 === 'RAВ * соs30 - F1 + RAС * соs45 = 0' ||
-				example3 === 'RAВ * соs30 - RAС * соs45 - F1 = 0' ||
-				example3 === 'RAВ * соs30 - F1 - RAС * соs45 = 0')
+			(example3 === 'RAB * cos30 - RAC * cos45 - F1 = 0' ||
+				example3 === 'RAB * cos30 - F1 - RAC * cos45 = 0' ||
+				example3 === 'RAB * cos30 - RAC * cos45 + F1 = 0' ||
+				example3 === 'RAB * cos30 - F1 + RAC * cos45 = 0' ||
+				example3 === 'RAB * cos30 - RAC * cos45 - F1 = 0' ||
+				example3 === 'RAB * cos30 - F1 - RAC * cos45 = 0')
 		) {
 			setIsRightExample3(true)
 
@@ -2095,14 +2096,14 @@ function App() {
 								onClick={e => e.stopPropagation()}
 							>
 								<p>Дано</p>
-								<p>F1 ={f1}</p>
-								<p>F2 = {f2}</p>
+								<p>F1 ={F1}</p>
+								<p>F2 = {F2}</p>
 								<p>
-									Rab -{' '}
+									RAB -{' '}
 									{solutionValueToExample1 && isNeedToShowValueToExample1
 										? solutionValueToExample1
 										: '?'}
-									, Rac -{' '}
+									, RAC -{' '}
 									{solutionValueToExample2 && isNeedToShowValueToExample2
 										? solutionValueToExample2
 										: '?'}
@@ -2223,7 +2224,7 @@ function App() {
 							</p>
 							<input
 								type='text'
-								placeholder='Н: RAВ + F2...'
+								placeholder=''
 								value={example1}
 								onChange={e => {
 									setExample1(e.target.value)
@@ -2239,7 +2240,7 @@ function App() {
 									<span className='unright'>Не правильно</span>
 								)}
 							</div>
-							Rab -{' '}
+							RAB -{' '}
 							{solutionValueToExample1 && isNeedToShowValueToExample1
 								? solutionValueToExample1 + 'kH'
 								: '?'}
@@ -2248,7 +2249,7 @@ function App() {
 							</p>
 							<input
 								type='text'
-								placeholder='Н: RAВ + F2...'
+								placeholder=''
 								value={example2}
 								onChange={e => {
 									setExample2(e.target.value)
@@ -2264,7 +2265,7 @@ function App() {
 									<span className='unright'>Не правильно</span>
 								)}
 							</div>
-							Rac -{' '}
+							RAC -{' '}
 							{solutionValueToExample2 && isNeedToShowValueToExample2 + 'kH'
 								? solutionValueToExample2 + 'kH'
 								: '?'}
@@ -2273,7 +2274,7 @@ function App() {
 							</p>
 							<input
 								type='text'
-								placeholder='Н: RAВ + F2...'
+								placeholder=''
 								value={example3}
 								onChange={e => {
 									setExample3(e.target.value)
@@ -2290,7 +2291,7 @@ function App() {
 								)}
 							</div>
 							{isNeedToShowValueToExample3
-								? `Відповідь: Rab = ${solutionValueToExample1}kH, RAС = ${solutionValueToExample2}kH`
+								? `Відповідь: RAB = ${solutionValueToExample1}kH, RAC = ${solutionValueToExample2}kH`
 								: ''}
 						</div>
 					</div>
