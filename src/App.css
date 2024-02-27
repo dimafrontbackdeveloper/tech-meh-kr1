@@ -20,6 +20,12 @@ input {
 	display: inline-block;
 }
 
+@media (max-width: 1200px) {
+	.examples {
+		max-width: 200px;
+	}
+}
+
 .build {
 	margin-bottom: 100px;
 	padding-bottom: 20px;

@@ -1737,12 +1737,12 @@ function App() {
 			}
 		} else if (
 			activeIndexOfKronshteinImg === 7 &&
-			(example3 === '- RAC - RAB * cos60 - F2 * cos30 + F1 * cos60 = 0' ||
-				example3 === '- RAC - F2 * cos30 + F1 * cos60 - RAB * cos60 = 0' ||
-				example3 === '- RAC - F2 * cos30 - RAB * cos60 + F1 * cos60 = 0' ||
-				example3 === '- RAC + F1 * cos60 - F2 * cos30 - RAB * cos60 = 0' ||
-				example3 === '- RAC + F1 * cos60 - RAB * cos60 - F2 * cos30 = 0' ||
-				example3 === '- RAC - RAB * cos60 - F2 * cos30 + F1 * cos60 = 0')
+			(example3 === '-RAC - RAB * cos60 - F2 * cos30 + F1 * cos60 = 0' ||
+				example3 === '-RAC - F2 * cos30 + F1 * cos60 - RAB * cos60 = 0' ||
+				example3 === '-RAC - F2 * cos30 - RAB * cos60 + F1 * cos60 = 0' ||
+				example3 === '-RAC + F1 * cos60 - F2 * cos30 - RAB * cos60 = 0' ||
+				example3 === '-RAC + F1 * cos60 - RAB * cos60 - F2 * cos30 = 0' ||
+				example3 === '-RAC - RAB * cos60 - F2 * cos30 + F1 * cos60 = 0')
 		) {
 			setIsRightExample3(true)
 
